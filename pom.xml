@@ -2,11 +2,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>no.nav.bidrag</groupId>
-  <artifactId>bidrag-behandling-felles</artifactId>
-  <version>0.0.6-SNAPSHOT</version>
+  <artifactId>bidrag-behandling-felles-dto</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>bidrag-behandling-felles</name>
-  <description>Inneholder enums, konstanter og funksjonalitet som er felles for flere repositories ifbm behandling av bidrag</description>
+  <name>bidrag-behandling-felles-dto</name>
+  <description>Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling av bidrag</description>
 
   <licenses>
     <license>
@@ -36,13 +36,12 @@
 
     <!-- dependencies -->
     <spring-boot.version>2.6.4</spring-boot.version>
-    <bidrag-beregn-felles.version>0.18.2</bidrag-beregn-felles.version>
   </properties>
 
   <distributionManagement>
     <repository>
       <id>github</id>
-      <url>https://maven.pkg.github.com/navikt/bidrag-behandling-felles</url>
+      <url>https://maven.pkg.github.com/navikt/bidrag-behandling-felles-dto</url>
     </repository>
   </distributionManagement>
 
@@ -86,9 +85,9 @@
   </dependencyManagement>
 
   <scm>
-    <developerConnection>scm:git:git@github.com:navikt/bidrag-behandling-felles.git</developerConnection>
-    <connection>scm:git:git@github.com:navikt/bidrag-behandling-felles.git</connection>
-    <url>https://github.com/navikt/bidrag-behandling-felles.git</url>
+    <developerConnection>scm:git:git@github.com:navikt/bidrag-behandling-felles-dto.git</developerConnection>
+    <connection>scm:git:git@github.com:navikt/bidrag-behandling-felles-dto.git</connection>
+    <url>https://github.com/navikt/bidrag-behandling-felles-dto.git</url>
     <tag>HEAD</tag>
   </scm>
 
