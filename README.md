@@ -6,6 +6,7 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 
 ## release endringer
 
-| versjon | endringstype | beskrivelse                                 |
-|---------|--------------|---------------------------------------------|
-| 0.0.1   | Opprettet    | Initiell versjon                            |
+| versjon | endringstype | beskrivelse                              |
+|---------|--------------|------------------------------------------|
+| 0.0.1   | Opprettet    | Initiell versjon                         |
+| 0.0.2   | Opprettet    | Lag til første klasser fra bidrag-stonad |
