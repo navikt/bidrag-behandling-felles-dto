@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 interface StonadService {
   fun hentStonad(stonadId: Int): StonadDto
 
-  fun endreMottakerIdOgOpprettHistorikk(request: EndreMottakerIdRequestDto): MottakerIdHistorikkDto
+  fun endreMottakerIdOgOpprettHistorikk(request: EndreMottakerIdRequestDto): EndreMottakerIdDto
 }
 
 
@@ -47,6 +47,20 @@ data class StonadDto(
 )
 
 
+@Schema(description ="Request for å endre mottaker-id på en stønad")
+data class EndreMottakerIdRequestDto(
+
+  @Schema(description = "Stønad-id")
+  val stonadId: Int,
+
+  @Schema(description = "Ny Mottaker-id som skal erstatte eksisterende id")
+  val nyMottakerId: String,
+
+  @Schema(description = "opprettet_av")
+  val opprettetAv: String = ""
+)
+
+
 data class EndreMottakerIdDto(
   @Schema(description = "stonad-id")
   val stonadId: Int = 0,
@@ -62,18 +76,4 @@ data class EndreMottakerIdDto(
 
   @Schema(description = "Opprettet timestamp")
   val opprettetTimestamp: LocalDateTime = LocalDateTime.now()
-)
-
-
-@Schema(description ="Request for å endre mottaker-id på en stønad")
-data class EndreMottakerIdRequestDto(
-
-  @Schema(description = "Stønad-id")
-  val stonadId: Int,
-
-  @Schema(description = "Ny Mottaker-id som skal erstatte eksisterende id")
-  val nyMottakerId: String,
-
-  @Schema(description = "opprettet_av")
-  val opprettetAv: String = ""
 )
