@@ -28,7 +28,7 @@
     <java.version>17</java.version>
     <kotlin.version>1.6.10</kotlin.version>
     <springdoc-openapi-ui.version>1.6.6</springdoc-openapi-ui.version>
-    <bidrag-behandling-felles.version>0.0.4</bidrag-behandling-felles.version>
+    <bidrag-behandling-felles.version>0.0.8</bidrag-behandling-felles.version>
 
 
     <!-- build -->
