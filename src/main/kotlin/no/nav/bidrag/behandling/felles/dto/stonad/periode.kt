@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema
 import java.math.BigDecimal
 import java.time.LocalDate
 
-data class HentPeriodeResponse(
+data class PeriodeDto(
 
   @Schema(description = "Periode-id")
   val periodeId: Int = 0,
