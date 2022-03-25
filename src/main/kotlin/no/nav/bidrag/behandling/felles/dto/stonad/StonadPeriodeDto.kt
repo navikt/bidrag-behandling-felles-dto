@@ -4,32 +4,33 @@ import io.swagger.v3.oas.annotations.media.Schema
 import java.math.BigDecimal
 import java.time.LocalDate
 
-data class PeriodeDto(
+
+data class StonadPeriodeDto(
 
   @Schema(description = "Periode-id")
-  val periodeId: Int = 0,
+  val periodeId: Int,
 
   @Schema(description = "Periode fra-og-med-dato")
-  val periodeFom: LocalDate = LocalDate.now(),
+  val periodeFom: LocalDate,
 
   @Schema(description = "Periode til-dato")
-  val periodeTil: LocalDate? = null,
+  val periodeTil: LocalDate?,
 
   @Schema(description = "Stonad-id")
-  val stonadId: Int = 0,
+  val stonadId: Int,
 
   @Schema(description = "Vedtak-id")
-  val vedtakId: Int = 0,
+  val vedtakId: Int,
 
   @Schema(description = "Periode-gjort-ugyldig-av-vedtak-id")
-  val periodeGjortUgyldigAvVedtakId: Int? = 0,
+  val periodeGjortUgyldigAvVedtakId: Int?,
 
   @Schema(description = "Beregnet stønadsbeløp")
-  val belop: BigDecimal = BigDecimal.ZERO,
+  val belop: BigDecimal,
 
   @Schema(description = "Valutakoden tilhørende stønadsbeløpet")
-  val valutakode: String = "NOK",
+  val valutakode: String,
 
   @Schema(description = "Resultatkode for stønaden")
-  val resultatkode: String = ""
+  val resultatkode: String
 )
