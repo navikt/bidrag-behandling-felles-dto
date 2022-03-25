@@ -7,6 +7,7 @@ interface MottakerIdHistorikkService {
   fun finnAlleEndringerMottakerIdForStonad(stonadId: Int): StonadDto
 }
 
+
 data class MottakerIdHistorikkDto(
 
   @Schema(description = "stonad-id")

@@ -46,6 +46,7 @@ data class StonadDto(
   val periodeListe: List<PeriodeDto>
 )
 
+
 data class EndreMottakerIdDto(
   @Schema(description = "stonad-id")
   val stonadId: Int = 0,
@@ -62,6 +63,7 @@ data class EndreMottakerIdDto(
   @Schema(description = "Opprettet timestamp")
   val opprettetTimestamp: LocalDateTime = LocalDateTime.now()
 )
+
 
 @Schema(description ="Request for å endre mottaker-id på en stønad")
 data class EndreMottakerIdRequestDto(
