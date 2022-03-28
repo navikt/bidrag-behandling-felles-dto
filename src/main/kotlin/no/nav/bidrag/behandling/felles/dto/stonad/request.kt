@@ -12,7 +12,7 @@ data class OpprettStonadRequestDto(
   val stonadType: StonadType,
 
   @Schema(description = "Referanse til sak")
-  val sakId: String? = null,
+  val sakId: String?,
 
   @Schema(description = "Id til den som skal betale bidraget")
   val skyldnerId: String,
@@ -27,7 +27,7 @@ data class OpprettStonadRequestDto(
   val opprettetAv: String,
 
   @Schema(description = "endret_av")
-  val endretAv: String? = null,
+  val endretAv: String?,
 
   @Schema(description = "Liste over alle perioder som inngår i stønaden")
   val periodeListe: List<OpprettStonadPeriodeRequestDto>
