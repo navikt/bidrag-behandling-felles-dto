@@ -4,6 +4,19 @@ import io.swagger.v3.oas.annotations.media.Schema
 import java.math.BigDecimal
 import java.time.LocalDate
 
+@Schema(description ="Request for å endre mottaker-id på en stønad")
+data class EndreMottakerIdRequestDto(
+
+  @Schema(description = "Stønad-id")
+  val stonadId: Int,
+
+  @Schema(description = "Ny Mottaker-id som skal erstatte eksisterende id")
+  val nyMottakerId: String,
+
+  @Schema(description = "opprettet_av")
+  val opprettetAv: String
+)
+
 @Schema(description ="Egenskaper ved en periode")
 data class OpprettStonadPeriodeRequestDto(
 
