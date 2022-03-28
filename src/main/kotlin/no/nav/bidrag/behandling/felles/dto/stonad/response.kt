@@ -6,7 +6,7 @@ import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime
 
-data class StonadDto(
+data class HentStonadDto(
   @Schema(description = "StønadId")
   val stonadId: Int,
 
@@ -38,10 +38,11 @@ data class StonadDto(
   val endretTimestamp: LocalDateTime?,
 
   @Schema(description = "Liste over alle perioder som inngår i stønaden")
-  val periodeListe: List<StonadPeriodeDto>
+  val periodeListe: List<HentStonadPeriodeDto>
 )
 
-data class StonadPeriodeDto(
+
+data class HentStonadPeriodeDto(
 
   @Schema(description = "Periode-id")
   val periodeId: Int,
@@ -79,23 +80,6 @@ data class AlleMottakerIdHistorikkForStonadDto(
   val alleMottakerIdHistorikkForStonad: List<MottakerIdHistorikkDto>?
 )
 
-
-data class EndreMottakerIdDto(
-  @Schema(description = "stonad-id")
-  val stonadId: Int,
-
-  @Schema(description = "Utgått Mottaker-Id")
-  val mottakerIdEndretFra: String,
-
-  @Schema(description = "Ny Mottaker-Id")
-  val mottakerIdEndretTil: String,
-
-  @Schema(description = "Saksbehandler/batchjobb/annet som har oppdatert mottaker-id")
-  val opprettetAv: String,
-
-  @Schema(description = "Opprettet timestamp")
-  val opprettetTimestamp: LocalDateTime
-)
 
 data class MottakerIdHistorikkDto(
 

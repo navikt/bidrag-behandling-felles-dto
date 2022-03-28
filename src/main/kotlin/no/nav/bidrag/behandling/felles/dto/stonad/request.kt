@@ -1,21 +1,38 @@
 package no.nav.bidrag.behandling.felles.dto.stonad
 
 import io.swagger.v3.oas.annotations.media.Schema
+import no.nav.bidrag.behandling.felles.enums.StonadType
 import java.math.BigDecimal
 import java.time.LocalDate
 
-@Schema(description ="Request for å endre mottaker-id på en stønad")
-data class EndreMottakerIdRequestDto(
+@Schema(description ="Egenskaper ved en stønadsendring")
+data class OpprettStonadRequestDto(
 
-  @Schema(description = "Stønad-id")
-  val stonadId: Int,
+  @Schema(description = "Stønadstype")
+  val stonadType: StonadType,
 
-  @Schema(description = "Ny Mottaker-id som skal erstatte eksisterende id")
-  val nyMottakerId: String,
+  @Schema(description = "Referanse til sak")
+  val sakId: String? = null,
+
+  @Schema(description = "Id til den som skal betale bidraget")
+  val skyldnerId: String,
+
+  @Schema(description = "Id til den som krever bidraget")
+  val kravhaverId: String,
+
+  @Schema(description = "Id til den som mottar bidraget")
+  val mottakerId: String,
 
   @Schema(description = "opprettet_av")
-  val opprettetAv: String
+  val opprettetAv: String,
+
+  @Schema(description = "endret_av")
+  val endretAv: String? = null,
+
+  @Schema(description = "Liste over alle perioder som inngår i stønaden")
+  val periodeListe: List<OpprettStonadPeriodeRequestDto>
 )
+
 
 @Schema(description ="Egenskaper ved en periode")
 data class OpprettStonadPeriodeRequestDto(
@@ -45,3 +62,17 @@ data class OpprettStonadPeriodeRequestDto(
   val resultatkode: String,
 
   )
+
+
+@Schema(description ="Request for å endre mottaker-id på en stønad")
+data class EndreMottakerIdRequestDto(
+
+  @Schema(description = "Stønad-id")
+  val stonadId: Int,
+
+  @Schema(description = "Ny Mottaker-id som skal erstatte eksisterende id")
+  val nyMottakerId: String,
+
+  @Schema(description = "opprettet_av")
+  val opprettetAv: String
+)
