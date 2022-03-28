@@ -15,11 +15,11 @@ jobs:
         with:
           java-version: '17'
       - uses: actions/cache@v1
-          with:
-            path: ~/.m2
-            key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-            restore-keys: |
-              ${{ runner.os }}-maven-
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
       - run: |
           TAGGED_DEPENDENCY=$(mvn help:evaluate -Dexpression=bidrag-behandling-felles.version -q -DforceStdout)
           echo ::set-output name=tag::${TAGGED_DEPENDENCY}
