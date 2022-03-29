@@ -1,8 +1,8 @@
 <settings>
   <servers>
     <server>
-      <id>github</id>
-      <username>x-access-token</username>
+      <id>github-package-registry-navikt</id>
+      <username>token</username>
       <password>${env.GITHUB_TOKEN}</password>
     </server>
   </servers>
