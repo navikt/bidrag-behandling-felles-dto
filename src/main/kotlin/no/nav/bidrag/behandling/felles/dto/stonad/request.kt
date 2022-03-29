@@ -43,9 +43,6 @@ data class OpprettStonadPeriodeRequestDto(
   @Schema(description = "Periode til-dato")
   val periodeTil: LocalDate?,
 
-  @Schema(description = "Stonad-id")
-  val stonadId: Int,
-
   @Schema(description = "Vedtak-id")
   val vedtakId: Int,
 
