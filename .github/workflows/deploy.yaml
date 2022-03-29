@@ -26,7 +26,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: navikt/bidrag-maven/verify-dependencies@v7
-      - run: mvn -B install -e
+      - run: mvn -B -U install -e
       - uses: navikt/bidrag-release/prepare-mvn-pkg@v3
         id: prepare
         if: github.ref == 'refs/heads/main'
