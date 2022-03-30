@@ -26,9 +26,6 @@ data class OpprettStonadRequestDto(
   @Schema(description = "opprettet_av")
   val opprettetAv: String,
 
-  @Schema(description = "endret_av")
-  val endretAv: String?,
-
   @Schema(description = "Liste over alle perioder som inngår i stønaden")
   val periodeListe: List<OpprettStonadPeriodeRequestDto>
 )

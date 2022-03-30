@@ -34,9 +34,9 @@ data class Sporingsdata(val correlationId: String) {
 }
 
 data class VedtakHendelsePeriode(
-  val periodeFom: LocalDate = LocalDate.now(),
-  val periodeTil: LocalDate? = null,
-  val belop: BigDecimal = BigDecimal.ZERO,
-  val valutakode: String = "NOK",
-  val resultatkode: String = "",
+  val periodeFom: LocalDate,
+  val periodeTil: LocalDate?,
+  val belop: BigDecimal,
+  val valutakode: String,
+  val resultatkode: String
 )
