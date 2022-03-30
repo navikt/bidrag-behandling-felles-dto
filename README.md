@@ -13,3 +13,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.3   | Opprettet    | Endret til å bruke kotlinfiler                          |
 | 0.0.4   | Opprettet    | Endret deploy.yaml                                      |
 | 0.0.5   | Opprettet    | Endret deploy.yaml og ny avhengighet til bidrag-commons |
+| 0.0.6   | Opprettet    | Fjernet endretAv i OpprettStonadRequestDto              |
