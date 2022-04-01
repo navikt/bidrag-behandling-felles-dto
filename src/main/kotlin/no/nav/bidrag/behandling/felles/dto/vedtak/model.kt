@@ -1,4 +1,4 @@
-package no.nav.bidrag.behandling.felles.dto.stonad
+package no.nav.bidrag.behandling.felles.dto.vedtak
 
 import no.nav.bidrag.behandling.felles.enums.StonadType
 import no.nav.bidrag.behandling.felles.enums.VedtakType
