@@ -6,7 +6,7 @@ import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime
 
-data class HentStonadDto(
+data class StonadDto(
   @Schema(description = "StønadId")
   val stonadId: Int,
 
@@ -38,11 +38,11 @@ data class HentStonadDto(
   val endretTimestamp: LocalDateTime?,
 
   @Schema(description = "Liste over alle perioder som inngår i stønaden")
-  val periodeListe: List<HentStonadPeriodeDto>
+  val periodeListe: List<StonadPeriodeDto>
 )
 
 
-data class HentStonadPeriodeDto(
+data class StonadPeriodeDto(
 
   @Schema(description = "Periode-id")
   val periodeId: Int,
