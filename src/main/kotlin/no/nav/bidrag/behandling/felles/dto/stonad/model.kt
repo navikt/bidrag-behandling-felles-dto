@@ -23,6 +23,8 @@ data class VedtakHendelse(
     CorrelationId.fetchCorrelationIdForThread() ?: CorrelationId.generateTimestamped(stonadType.toString())
       .get()
   )
+  fun hentStonadType() = StonadType.values().find { it.name == stonadType.toString() } ?: StonadType.NO_SUPPORT
+  private fun doThrow(message: String): String = throw IllegalStateException(message)
 }
 
 data class Sporingsdata(val correlationId: String) {
