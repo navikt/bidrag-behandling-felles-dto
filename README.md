@@ -15,3 +15,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.5   | Opprettet    | Endret deploy.yaml og ny avhengighet til bidrag-commons   |
 | 0.0.6   | Opprettet    | Fjernet endretAv i OpprettStonadRequestDto                |
 | 0.0.7   | Opprettet    | Funksjoner brukt av bidrag-stonad lagt til VedtakHendelse |
+| 0.0.8   | Opprettet    | Lagt til Dtoer for bidrag-vedtak                          |
