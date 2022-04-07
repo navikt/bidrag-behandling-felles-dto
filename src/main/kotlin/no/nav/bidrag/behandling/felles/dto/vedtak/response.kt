@@ -1,6 +1,7 @@
 package no.nav.bidrag.behandling.felles.dto.vedtak
 
 import com.fasterxml.jackson.annotation.JsonRawValue
+import com.fasterxml.jackson.databind.JsonNode
 import io.swagger.v3.oas.annotations.media.Schema
 import no.nav.bidrag.behandling.felles.enums.GrunnlagType
 import no.nav.bidrag.behandling.felles.enums.StonadType
@@ -57,8 +58,7 @@ data class GrunnlagDto(
   val type: GrunnlagType,
 
   @Schema(description = "Innholdet i grunnlaget")
-  @JsonRawValue
-  val innhold: String
+  val innhold: JsonNode
 )
 
 @Schema
