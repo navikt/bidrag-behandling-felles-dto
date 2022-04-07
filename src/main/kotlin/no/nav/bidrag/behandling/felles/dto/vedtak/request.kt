@@ -63,7 +63,7 @@ data class OpprettGrunnlagRequestDto(
 
   @Schema(description = "Innholdet i grunnlaget")
   @NotBlank
-  val innhold: JsonNode = ObjectMapper().createObjectNode()
+  val innhold: JsonNode
 )
 
 
