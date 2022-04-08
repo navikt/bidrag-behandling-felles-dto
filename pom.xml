@@ -28,7 +28,7 @@
     <java.version>17</java.version>
     <kotlin.version>1.6.10</kotlin.version>
     <springdoc-openapi-ui.version>1.6.6</springdoc-openapi-ui.version>
-    <bidrag-behandling-felles.version>0.0.8</bidrag-behandling-felles.version>
+    <bidrag-behandling-felles.version>0.0.10</bidrag-behandling-felles.version>
     <bidrag-commons.version>0.6.7</bidrag-commons.version>
 
     <!-- build -->
@@ -233,4 +233,26 @@
 
     </plugins>
   </build>
+  <repositories>
+    <!-- Det generelle interne Nexus-repoet til NAV (brukes kun internt) -->
+    <repository>
+      <id>nexus-internal-release</id>
+      <url>https://repo.adeo.no/repository/maven-release</url>
+    </repository>
+    <!-- Mirror foran Maven Central NAV (brukes kun internt) -->
+    <repository>
+      <id>nexus-internal-mirror</id>
+      <url>https://repo.adeo.no/repository/maven-public</url>
+    </repository>
+    <!-- Skal brukes hvis bygget kjører internt (f.eks. Jenkins, fra utviklerimage, eller via ScaleFT) -->
+    <repository>
+      <id>internal-mirror-github-navikt</id>
+      <url>https://repo.adeo.no/repository/github-package-registry-navikt/</url>
+    </repository>
+    <!-- Skal brukes hvis bygget kjøres fra en Github Action -->
+    <repository>
+      <id>github-package-registry-navikt</id>
+      <url>https://maven.pkg.github.com/navikt/maven-release</url>
+    </repository>
+  </repositories>
 </project>
