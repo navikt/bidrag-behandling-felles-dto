@@ -48,10 +48,10 @@ data class HentKomplettGrunnlagspakkeResponse(
 data class OppdaterGrunnlagspakkeDto(
 
   @Schema(description = "Grunnlagspakke-id")
-  val grunnlagspakkeId: Int = 0,
+  val grunnlagspakkeId: Int,
 
   @Schema(description = "Liste over grunnlagene som er hentet inn med person-id og status")
-  val grunnlagtypeResponsListe: List<HentGrunnlagDto> = emptyList()
+  val grunnlagtypeResponsListe: List<HentGrunnlagDto>
 )
 
 
