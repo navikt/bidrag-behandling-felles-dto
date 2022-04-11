@@ -1,7 +1,6 @@
 package no.nav.bidrag.behandling.felles.dto.vedtak
 
 import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.databind.ObjectMapper
 import io.swagger.v3.oas.annotations.media.Schema
 import no.nav.bidrag.behandling.felles.enums.GrunnlagType
 import no.nav.bidrag.behandling.felles.enums.StonadType
@@ -111,14 +110,6 @@ data class OpprettStonadsendringRequestDto(
 @Schema
 data class OpprettEngangsbelopRequestDto(
 
-  @Schema(description ="Vedtak-id")
-  @Min(0)
-  val vedtakId: Int,
-
-  @Schema(description ="Løpenr innenfor vedtak")
-  @Min(0)
-  val lopenr: Int,
-
   @Schema(description ="Id for eventuelt engangsbeløp som skal endres")
   val endrerEngangsbelopId: Int?,
 
@@ -158,10 +149,6 @@ data class OpprettEngangsbelopRequestDto(
 
 @Schema
 data class OpprettBehandlingsreferanseRequestDto(
-
-  @Schema(description ="Vedtak-id")
-  @Min(0)
-  val vedtakId: Int,
 
   @Schema(description ="Kildesystem for behandlingen før vedtaket")
   @NotBlank
