@@ -18,3 +18,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.8   | Opprettet    | Lagt til Dtoer for bidrag-vedtak                          |
 | 0.0.9   | Opprettet    | Grunnlag.innhold endret til JsonNode                      |
 | 0.0.10  | Opprettet    | Lagt til dto-klasser for bidrag-grunnlag                  |
+| 0.0.11  | Endret       | Fjerned id-felter fra dto'er som skal settes i bidrag-vedtak |
