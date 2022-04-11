@@ -1,6 +1,5 @@
 package no.nav.bidrag.behandling.felles.dto.vedtak
 
-import com.fasterxml.jackson.annotation.JsonRawValue
 import com.fasterxml.jackson.databind.JsonNode
 import io.swagger.v3.oas.annotations.media.Schema
 import no.nav.bidrag.behandling.felles.enums.GrunnlagType
