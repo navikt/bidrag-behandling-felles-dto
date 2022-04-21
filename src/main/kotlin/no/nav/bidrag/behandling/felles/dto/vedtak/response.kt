@@ -2,6 +2,7 @@ package no.nav.bidrag.behandling.felles.dto.vedtak
 
 import com.fasterxml.jackson.databind.JsonNode
 import io.swagger.v3.oas.annotations.media.Schema
+import no.nav.bidrag.behandling.felles.enums.EngangsbelopType
 import no.nav.bidrag.behandling.felles.enums.GrunnlagType
 import no.nav.bidrag.behandling.felles.enums.StonadType
 import no.nav.bidrag.behandling.felles.enums.VedtakType
@@ -99,7 +100,7 @@ data class EngangsbelopDto(
   val endrerEngangsbelopId: Int?,
 
   @Schema(description =  "Beløpstype. Saertilskudd, gebyr m.m.")
-  val type: String,
+  val type: EngangsbelopType,
 
   @Schema(description =  "Id til den som skal betale engangsbeløpet")
   val skyldnerId: String,
