@@ -25,7 +25,7 @@ jobs:
           repositories: github-packages=https://maven.pkg.github.com/navikt/maven-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: navikt/bidrag-maven/verify-dependencies@v1
+      - uses: navikt/bidrag-maven/verify-dependencies@v7
       - run: mvn -B install -e
       - uses: navikt/bidrag-release/prepare-mvn-pkg@v3
         id: prepare
