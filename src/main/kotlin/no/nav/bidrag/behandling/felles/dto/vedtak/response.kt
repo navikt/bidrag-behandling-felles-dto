@@ -99,7 +99,7 @@ data class EngangsbelopDto(
   @Schema(description =  "Id for eventuelt engangsbeløp som skal endres")
   val endrerEngangsbelopId: Int?,
 
-  @Schema(description =  "Beløpstype. Saertilskudd, gebyr m.m.")
+  @Schema(description =  "Type Engangsbeløp. Saertilskudd, gebyr m.m.")
   val type: EngangsbelopType,
 
   @Schema(description =  "Id til den som skal betale engangsbeløpet")

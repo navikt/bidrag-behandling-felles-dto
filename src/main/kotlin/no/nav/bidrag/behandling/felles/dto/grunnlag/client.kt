@@ -6,7 +6,7 @@ interface GrunnlagClient {
 
   fun oppdaterGrunnlagspakke(grunnlagspakkeId: Int, request: OppdaterGrunnlagspakkeRequestDto): OppdaterGrunnlagspakkeDto?
 
-  fun hentGrunnlagspakke(grunnlagspakkeId: Int): HentKomplettGrunnlagspakkeResponse?
+  fun hentGrunnlagspakke(grunnlagspakkeId: Int): HentGrunnlagspakkeDto?
 
   fun lukkGrunnlagspakke(grunnlagspakkeId: Int): Int?
 
