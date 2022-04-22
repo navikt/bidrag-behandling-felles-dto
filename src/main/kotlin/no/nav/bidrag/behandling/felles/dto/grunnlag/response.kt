@@ -8,42 +8,6 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 
 
-
-data class HentGrunnlagResponse(
-
-  @Schema(description = "Hvilken type grunnlag som er hentet")
-  val grunnlagType: GrunnlagType,
-
-  @Schema(description = "Angir personId som grunnlag er hentet for")
-  val personId: String,
-
-  @Schema(description = "Status for utført kall")
-  val status: GrunnlagsRequestStatus,
-
-  @Schema(description = "Statusmelding for utført kall")
-  val statusMelding: String,
-
-  )
-
-
-data class HentKomplettGrunnlagspakkeResponse(
-
-  @Schema(description = "grunnlagspakke-id")
-  val grunnlagspakkeId: Int,
-
-  @Schema(description = "Liste over innhentede inntekter fra a-inntekt og underliggende poster")
-  val ainntektListe: List<HentAinntektDto>,
-
-  @Schema(description = "Liste over innhentede fra skatt og underliggende poster")
-  val skattegrunnlagListe: List<HentSkattegrunnlagDto>,
-
-  @Schema(description = "Liste over innhentet utvidet barnetrygd og småbarnstillegg")
-  val ubstListe: List<HentUtvidetBarnetrygdOgSmaabarnstilleggDto>,
-
-  @Schema(description = "Liste over innhentet barnetillegg")
-  val barnetilleggListe: List<HentBarnetilleggDto>
-)
-
 @Schema(description = "Respons ved oppdatering av  grunnlagspakke")
 data class OppdaterGrunnlagspakkeDto(
 
@@ -51,11 +15,11 @@ data class OppdaterGrunnlagspakkeDto(
   val grunnlagspakkeId: Int,
 
   @Schema(description = "Liste over grunnlagene som er hentet inn med person-id og status")
-  val grunnlagtypeResponsListe: List<HentGrunnlagDto>
+  val grunnlagtypeResponsListe: List<OppdaterGrunnlagDto>
 )
 
 
-data class HentGrunnlagDto(
+data class OppdaterGrunnlagDto(
 
   @Schema(description = "Hvilken type grunnlag som er hentet")
   val grunnlagType: GrunnlagType,
@@ -72,8 +36,26 @@ data class HentGrunnlagDto(
   )
 
 
+data class HentGrunnlagspakkeDto(
 
-data class HentAinntektDto(
+  @Schema(description = "grunnlagspakke-id")
+  val grunnlagspakkeId: Int,
+
+  @Schema(description = "Liste over innhentede inntekter fra a-inntekt og underliggende poster")
+  val ainntektListe: List<AinntektDto>,
+
+  @Schema(description = "Liste over innhentede fra skatt og underliggende poster")
+  val skattegrunnlagListe: List<SkattegrunnlagDto>,
+
+  @Schema(description = "Liste over innhentet utvidet barnetrygd og småbarnstillegg")
+  val ubstListe: List<UtvidetBarnetrygdOgSmaabarnstilleggDto>,
+
+  @Schema(description = "Liste over innhentet barnetillegg")
+  val barnetilleggListe: List<BarnetilleggDto>
+)
+
+
+data class AinntektDto(
 
   @Schema(description = "Id til personen inntekten er rapportert for")
   val personId: String,
@@ -97,11 +79,11 @@ data class HentAinntektDto(
   val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Liste over poster for innhentede inntektsposter")
-  val ainntektspostListe: List<HentAinntektspostDto>
+  val ainntektspostListe: List<AinntektspostDto>
 )
 
 
-data class HentAinntektspostDto (
+data class AinntektspostDto (
 
   @Schema(description = "Perioden innteksposten er utbetalt YYYYMM")
   val utbetalingsperiode: String?,
@@ -138,7 +120,7 @@ data class HentAinntektspostDto (
 )
 
 
-data class HentSkattegrunnlagDto(
+data class SkattegrunnlagDto(
 
   @Schema(description = "Id til personen inntekten er rapportert for")
   val personId: String,
@@ -162,11 +144,11 @@ data class HentSkattegrunnlagDto(
   val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Liste over poster med skattegrunnlag")
-  val skattegrunnlagListe: List<HentSkattegrunnlagspostDto>
+  val skattegrunnlagListe: List<SkattegrunnlagspostDto>
 )
 
 
-data class HentSkattegrunnlagspostDto(
+data class SkattegrunnlagspostDto(
 
   @Schema(description = "Type skattegrunnlag, ordinær eller Svalbard")
   val skattegrunnlagType: String,
@@ -179,7 +161,7 @@ data class HentSkattegrunnlagspostDto(
 )
 
 
-data class HentUtvidetBarnetrygdOgSmaabarnstilleggDto(
+data class UtvidetBarnetrygdOgSmaabarnstilleggDto(
 
   @Schema(description = "Id til personen ubst er rapportert for")
   val personId: String,
@@ -213,7 +195,7 @@ data class HentUtvidetBarnetrygdOgSmaabarnstilleggDto(
 )
 
 
-data class HentBarnetilleggDto(
+data class BarnetilleggDto(
 
   @Schema(description = "Id til personen barnetillegg er rapportert for")
   val partPersonId: String,
