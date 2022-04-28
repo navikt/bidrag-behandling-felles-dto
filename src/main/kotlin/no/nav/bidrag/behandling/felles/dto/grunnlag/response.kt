@@ -1,7 +1,7 @@
 package no.nav.bidrag.behandling.felles.dto.grunnlag
 
 import io.swagger.v3.oas.annotations.media.Schema
-import no.nav.bidrag.behandling.felles.enums.GrunnlagType
+import no.nav.bidrag.behandling.felles.enums.GrunnlagRequestType
 import no.nav.bidrag.behandling.felles.enums.GrunnlagsRequestStatus
 import java.math.BigDecimal
 import java.time.LocalDate
@@ -15,14 +15,14 @@ data class OppdaterGrunnlagspakkeDto(
   val grunnlagspakkeId: Int,
 
   @Schema(description = "Liste over grunnlagene som er hentet inn med person-id og status")
-  val grunnlagtypeResponsListe: List<OppdaterGrunnlagDto>
+  val grunnlagTypeResponsListe: List<OppdaterGrunnlagDto>
 )
 
 
 data class OppdaterGrunnlagDto(
 
   @Schema(description = "Hvilken type grunnlag som er hentet")
-  val grunnlagType: GrunnlagType,
+  val type: GrunnlagRequestType,
 
   @Schema(description = "Angir personId som grunnlag er hentet for")
   val personId: String,

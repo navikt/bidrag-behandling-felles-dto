@@ -2,7 +2,7 @@ package no.nav.bidrag.behandling.felles.dto.grunnlag
 
 import io.swagger.v3.oas.annotations.media.Schema
 import no.nav.bidrag.behandling.felles.enums.Formaal
-import no.nav.bidrag.behandling.felles.enums.GrunnlagType
+import no.nav.bidrag.behandling.felles.enums.GrunnlagRequestType
 import java.time.LocalDate
 import javax.validation.Valid
 import javax.validation.constraints.NotBlank
@@ -37,7 +37,7 @@ data class OppdaterGrunnlagspakkeRequestDto(
 data class GrunnlagRequestDto(
 
   @Schema(description = "Hvilken type grunnlag skal hentes")
-  val grunnlagType: GrunnlagType,
+  val type: GrunnlagRequestType,
 
   @Schema(description = "Angir personId som grunnlag skal hentes for")
   @field:Pattern(regexp = "^[0-9]{11}\$", message = "Ugyldig format. Må inneholde eksakt 11 siffer.")
