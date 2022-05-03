@@ -22,3 +22,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.12  | Endret       | Endret EngangsbelopType til enum                                   |
 | 0.0.13  | Endret       | Erstattet GrunnlagType med GrunnlagRequestType for bidrag-grunnlag |
 | 0.0.14  | Endret       | Oppdatert versjon av bidrag-behandling-felles                      |
+| 0.0.15  | Endret       | Fjernet bidrag-commons avhengighet                                 |
