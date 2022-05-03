@@ -5,7 +5,6 @@ import no.nav.bidrag.behandling.felles.enums.VedtakType
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime
-import no.nav.bidrag.commons.CorrelationId
 
 data class VedtakHendelse(
   val vedtakId: Int,
@@ -17,12 +16,9 @@ data class VedtakHendelse(
   val mottakerId: String,
   val opprettetAv: String,
   val opprettetTimestamp: LocalDateTime,
-  val periodeListe: List<VedtakHendelsePeriode>
+  val periodeListe: List<VedtakHendelsePeriode>,
+  val sporing: Sporingsdata
 ) {
-  val sporing: Sporingsdata = Sporingsdata(
-    CorrelationId.fetchCorrelationIdForThread() ?: CorrelationId.generateTimestamped(stonadType.toString())
-      .get()
-  )
   fun hentStonadType() = StonadType.values().find { it.name == stonadType.toString() } ?: StonadType.NO_SUPPORT
   private fun doThrow(message: String): String = throw IllegalStateException(message)
 }
