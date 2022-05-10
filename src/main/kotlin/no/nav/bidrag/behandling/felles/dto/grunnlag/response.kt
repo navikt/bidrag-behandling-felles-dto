@@ -55,7 +55,7 @@ data class HentGrunnlagspakkeDto(
   val barnetilleggListe: List<BarnetilleggDto>,
 
   @Schema(description = "Liste over innhentet barnetillegg")
-  val husstandsmedlemmerListe: List<Husstand>
+  val husstandsmedlemmerListe: List<HusstandDto>
 )
 
 
@@ -235,12 +235,8 @@ data class BarnetilleggDto(
   val hentetTidspunkt: LocalDateTime
 )
 
-data class VoksneHusstandsmedlemmerDto(
-  @Schema(description = "Gir periodisert informasjon om hvilke husstander BP har bodd i/bor i, og en periodisert liste over de som bor/bodde der")
-  val husstandListe: List<Husstand>?
-)
 
-data class Husstand(
+data class HusstandDto(
   @Schema(description = "Personen (BP) bor i husstanden fra- og med måned")
   val periodeFra: LocalDate,
 
@@ -277,11 +273,11 @@ data class Husstand(
   @Schema(description = "Lagret tidspunkt")
   val lagretTidspunkt: LocalDateTime,
 
-  @Schema(description = "Periodisert liste over husstandsmedlemmer")
-  val husstandsmedlemmerListe: List<Husstandsmedlem>?
+  @Schema(description = "Periodisert liste over voksne husstandsmedlemmer, barn er filtrert bort")
+  val voksneHusstandsmedlemmerListe: List<HusstandsmedlemDto>?
 )
 
-data class Husstandsmedlem(
+data class HusstandsmedlemDto(
   @Schema(description = "Identen til husstandsmedlemmet")
   var personId: String?,
 
@@ -301,12 +297,8 @@ data class Husstandsmedlem(
   val lagretTidspunkt: LocalDateTime
 )
 
-data class EgneBarnDto(
-  @Schema(description = "Liste over alle barn en person har en forelder-relasjon til. I tillegg til periodisert liste med når et barn bor sammen med forelderen")
-  val egneBarnListe: List<Barn>?
-)
 
-data class Barn(
+data class BarnDto(
   @Schema(description = "Identen til barnet")
   var personId: String?,
 
@@ -329,10 +321,10 @@ data class Barn(
   val lagretTidspunkt: LocalDateTime,
 
   @Schema(description = "Perioder barnet bor i samme husstand som aktuell forelder")
-  val borISammeHusstandListe: List<BorISammeHusstand>?
+  val borISammeHusstandDtoListe: List<BorISammeHusstandDto>?
 )
 
-data class BorISammeHusstand(
+data class BorISammeHusstandDto(
   @Schema(description = "Barnet bor i husstanden fra- og med måned")
   val periodeFra: LocalDate,
 
@@ -346,7 +338,8 @@ data class BorISammeHusstand(
   val lagretTidspunkt: LocalDateTime
 )
 
-data class Sivilstand(
+
+data class SivilstandDto(
   @Schema(description = "Sivilstand gjelder fra- og med måned")
   val periodeFra: LocalDate,
 
