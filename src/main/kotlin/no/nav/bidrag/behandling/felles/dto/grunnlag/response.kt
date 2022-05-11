@@ -42,20 +42,27 @@ data class HentGrunnlagspakkeDto(
   @Schema(description = "grunnlagspakke-id")
   val grunnlagspakkeId: Int,
 
-  @Schema(description = "Liste over innhentede inntekter fra a-inntekt og underliggende poster")
+  @Schema(description = "Periodisert liste over innhentede inntekter fra a-inntekt og underliggende poster")
   val ainntektListe: List<AinntektDto>,
 
-  @Schema(description = "Liste over innhentede fra skatt og underliggende poster")
+  @Schema(description = "Periodisert liste over innhentede fra skatt og underliggende poster")
   val skattegrunnlagListe: List<SkattegrunnlagDto>,
 
-  @Schema(description = "Liste over innhentet utvidet barnetrygd og småbarnstillegg")
+  @Schema(description = "Periodisert liste over innhentet utvidet barnetrygd og småbarnstillegg")
   val ubstListe: List<UtvidetBarnetrygdOgSmaabarnstilleggDto>,
 
-  @Schema(description = "Liste over innhentet barnetillegg")
+  @Schema(description = "Periodisert liste over innhentet barnetillegg")
   val barnetilleggListe: List<BarnetilleggDto>,
 
-  @Schema(description = "Liste over innhentet barnetillegg")
-  val husstandsmedlemmerListe: List<HusstandDto>
+  @Schema(description = "Liste over en persons barn og hvilke perioder de eventuelt deler husstand med personen grunnlaget er hentet inn for")
+  val barnListe: List<BarnDto>,
+
+  @Schema(description = "Periodisert liste over innhentede husstander og dere husstandsmedlemmer")
+  val husstandListe: List<HusstandDto>,
+
+  @Schema(description = "Periodisert liste over en persons sivilstand")
+  val sivilstandListe: List<SivilstandDto>,
+
 )
 
 
@@ -236,6 +243,48 @@ data class BarnetilleggDto(
 )
 
 
+// PDL-data
+data class BarnDto(
+  @Schema(description = "Identen til barnet")
+  var personId: String?,
+
+  @Schema(description = "Barnets fødselsdato")
+  var foedselsdato: LocalDate?,
+
+  @Schema(description = "Barnets fødselsår")
+  var foedselsaar: LocalDate?,
+
+  @Schema(description = "Navn på personen, format <Fornavn, mellomnavn, Etternavn")
+  var navn: String?,
+
+  @Schema(description = "Barnets eventuelle dødsdato")
+  var doedssdato: LocalDate?,
+
+  @Schema(description = "Manuelt opprettet av")
+  val opprettetAv: String?,
+
+  @Schema(description = "Lagret tidspunkt")
+  val lagretTidspunkt: LocalDateTime,
+
+  @Schema(description = "Perioder barnet bor i samme husstand som aktuell forelder")
+  val borISammeHusstandDtoListe: List<BorISammeHusstandDto>?
+)
+
+data class BorISammeHusstandDto(
+  @Schema(description = "Barnet bor i husstanden fra- og med måned")
+  val periodeFra: LocalDate,
+
+  @Schema(description = "Barnet bor i husstanden til- og med måned")
+  val periodeTil: LocalDate?,
+
+  @Schema(description = "Manuelt opprettet av")
+  val opprettetAv: String?,
+
+  @Schema(description = "Lagret tidspunkt")
+  val lagretTidspunkt: LocalDateTime
+)
+
+
 data class HusstandDto(
   @Schema(description = "Personen (BP) bor i husstanden fra- og med måned")
   val periodeFra: LocalDate,
@@ -297,46 +346,6 @@ data class HusstandsmedlemDto(
   val lagretTidspunkt: LocalDateTime
 )
 
-
-data class BarnDto(
-  @Schema(description = "Identen til barnet")
-  var personId: String?,
-
-  @Schema(description = "Barnets fødselsdato")
-  var foedselsdato: LocalDate?,
-
-  @Schema(description = "Barnets fødselsår")
-  var foedselsaar: LocalDate?,
-
-  @Schema(description = "Navn på personen, format <Fornavn, mellomnavn, Etternavn")
-  var navn: String?,
-
-  @Schema(description = "Barnets eventuelle dødsdato")
-  var doedssdato: LocalDate?,
-
-  @Schema(description = "Manuelt opprettet av")
-  val opprettetAv: String?,
-
-  @Schema(description = "Lagret tidspunkt")
-  val lagretTidspunkt: LocalDateTime,
-
-  @Schema(description = "Perioder barnet bor i samme husstand som aktuell forelder")
-  val borISammeHusstandDtoListe: List<BorISammeHusstandDto>?
-)
-
-data class BorISammeHusstandDto(
-  @Schema(description = "Barnet bor i husstanden fra- og med måned")
-  val periodeFra: LocalDate,
-
-  @Schema(description = "Barnet bor i husstanden til- og med måned")
-  val periodeTil: LocalDate?,
-
-  @Schema(description = "Manuelt opprettet av")
-  val opprettetAv: String?,
-
-  @Schema(description = "Lagret tidspunkt")
-  val lagretTidspunkt: LocalDateTime
-)
 
 
 data class SivilstandDto(
