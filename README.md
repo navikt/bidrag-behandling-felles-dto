@@ -26,3 +26,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.16  | Endret       | Lagt til dto'er for bidrag-grunnlag med persondata fra PDL               |
 | 0.0.17  | Endret       | Noen navneendringer på dto'er for bidrag-grunnlag med persondata fra PDL |
 | 0.0.18  | Endret       | HentGrunnlagspakkeDto utvidet til å inneholde PDL-data                   |
+| 0.0.19  | Endret       | Opprettet PersonDto                                                      |

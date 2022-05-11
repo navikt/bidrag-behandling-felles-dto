@@ -63,6 +63,9 @@ data class HentGrunnlagspakkeDto(
   @Schema(description = "Periodisert liste over en persons sivilstand")
   val sivilstandListe: List<SivilstandDto>,
 
+  @Schema(description = "Liste med personinfo for angitte personer")
+  val personListe: List<PersonDto>,
+
 )
 
 
@@ -86,8 +89,8 @@ data class AinntektDto(
   @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
-  @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime,
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime,
 
   @Schema(description = "Liste over poster for innhentede inntektsposter")
   val ainntektspostListe: List<AinntektspostDto>
@@ -151,8 +154,8 @@ data class SkattegrunnlagDto(
   @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
-  @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime,
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime,
 
   @Schema(description = "Liste over poster med skattegrunnlag")
   val skattegrunnlagListe: List<SkattegrunnlagspostDto>
@@ -201,8 +204,8 @@ data class UtvidetBarnetrygdOgSmaabarnstilleggDto(
   @Schema(description = "Angir om stønaden er manuelt beregnet")
   val manueltBeregnet: Boolean,
 
-  @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime
 )
 
 
@@ -238,15 +241,21 @@ data class BarnetilleggDto(
   @Schema(description = "Angir om barnet er felles- eller særkullsbarn")
   val barnType: String,
 
-  @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime
 )
 
 
 // PDL-data
 data class BarnDto(
   @Schema(description = "Identen til barnet")
-  var personId: String?,
+  var personIdBarn: String?,
+
+  @Schema(description = "Person-id til forelder til barnet")
+  val personIdVoksen: Int,
+
+  @Schema(description = "Navn på personen, format <Fornavn, mellomnavn, Etternavn")
+  var navn: String?,
 
   @Schema(description = "Barnets fødselsdato")
   var foedselsdato: LocalDate?,
@@ -254,17 +263,14 @@ data class BarnDto(
   @Schema(description = "Barnets fødselsår")
   var foedselsaar: LocalDate?,
 
-  @Schema(description = "Navn på personen, format <Fornavn, mellomnavn, Etternavn")
-  var navn: String?,
-
   @Schema(description = "Barnets eventuelle dødsdato")
   var doedssdato: LocalDate?,
 
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Lagret tidspunkt")
-  val lagretTidspunkt: LocalDateTime,
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime,
 
   @Schema(description = "Perioder barnet bor i samme husstand som aktuell forelder")
   val borISammeHusstandDtoListe: List<BorISammeHusstandDto>?
@@ -280,8 +286,8 @@ data class BorISammeHusstandDto(
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Lagret tidspunkt")
-  val lagretTidspunkt: LocalDateTime
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime
 )
 
 
@@ -319,8 +325,8 @@ data class HusstandDto(
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Lagret tidspunkt")
-  val lagretTidspunkt: LocalDateTime,
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime,
 
   @Schema(description = "Periodisert liste over voksne husstandsmedlemmer, barn er filtrert bort")
   val voksneHusstandsmedlemmerListe: List<HusstandsmedlemDto>?
@@ -342,8 +348,8 @@ data class HusstandsmedlemDto(
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Lagret tidspunkt")
-  val lagretTidspunkt: LocalDateTime
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime
 )
 
 
@@ -361,6 +367,27 @@ data class SivilstandDto(
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Lagret tidspunkt")
-  val lagretTidspunkt: LocalDateTime
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime
+)
+
+
+data class PersonDto(
+  @Schema(description = "Person-id til angitt person")
+  val personId: Int,
+
+  @Schema(description = "Personens navn")
+  val navn: String?,
+
+  @Schema(description = "Personens fødselsdato")
+  val foedselsdato: LocalDate?,
+
+  @Schema(description = "Personens eventuelle dødsdato")
+  val doedsdato: LocalDate?,
+
+  @Schema(description = "Manuelt opprettet av")
+  val opprettetAv: String?,
+
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime
 )
