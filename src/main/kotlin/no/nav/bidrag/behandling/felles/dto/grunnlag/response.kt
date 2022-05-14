@@ -278,7 +278,7 @@ data class BarnDto(
 
 data class BorISammeHusstandDto(
   @Schema(description = "Barnet bor i husstanden fra- og med måned")
-  val periodeFra: LocalDate,
+  val periodeFra: LocalDate?,
 
   @Schema(description = "Barnet bor i husstanden til- og med måned")
   val periodeTil: LocalDate?,
@@ -340,7 +340,7 @@ data class HusstandsmedlemDto(
   var navn: String?,
 
   @Schema(description = "Husstandsmedlemmet bor i husstanden fra- og med måned")
-  val periodeFra: LocalDate,
+  val periodeFra: LocalDate?,
 
   @Schema(description = "Husstandsmedlemmet bor i husstanden til- og med måned")
   val periodeTil: LocalDate?,
@@ -356,7 +356,7 @@ data class HusstandsmedlemDto(
 
 data class SivilstandDto(
   @Schema(description = "Sivilstand gjelder fra- og med måned")
-  val periodeFra: LocalDate,
+  val periodeFra: LocalDate?,
 
   @Schema(description = "Sivilstand gjelder til- og med måned")
   val periodeTil: LocalDate?,
