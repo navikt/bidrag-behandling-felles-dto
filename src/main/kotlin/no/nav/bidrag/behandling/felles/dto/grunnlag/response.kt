@@ -252,7 +252,7 @@ data class BarnDto(
   var personIdBarn: String?,
 
   @Schema(description = "Person-id til forelder til barnet")
-  val personIdVoksen: Int,
+  val personIdVoksen: String,
 
   @Schema(description = "Navn på personen, format <Fornavn, mellomnavn, Etternavn")
   var navn: String?,
@@ -311,7 +311,7 @@ data class HusstandDto(
   val bruksenhetsnummer: String?,
 
   @Schema(description = "Norsk postnummer")
-  val postnr: String?,
+  val postnummer: String?,
 
   @Schema(description = "6 siffer, identifiserer bydel")
   val bydelsnummer: String?,
@@ -320,7 +320,7 @@ data class HusstandDto(
   val kommunenummer: String?,
 
   @Schema(description = "Nøkkel til geografisk adresse registrert i Kartverkets matrikkel")
-  val matrikkelId: String?,
+  val matrikkelId: Long?,
 
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
@@ -374,7 +374,7 @@ data class SivilstandDto(
 
 data class PersonDto(
   @Schema(description = "Person-id til angitt person")
-  val personId: Int,
+  val personId: String,
 
   @Schema(description = "Personens navn")
   val navn: String?,
