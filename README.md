@@ -30,3 +30,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.20  | Endret       | Endret noen datoer til nullable                                          |
 | 0.0.21  | Endret       | Endret noen datatyper                                                    |
 | 0.0.22  | Endret       | Rettet skrivefeil                                                        |
+| 0.0.23  | Endret       | Endret datatype                                                          |
