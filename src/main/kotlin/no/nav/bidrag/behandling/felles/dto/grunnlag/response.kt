@@ -264,7 +264,7 @@ data class BarnDto(
   var foedselsaar: LocalDate?,
 
   @Schema(description = "Barnets eventuelle dødsdato")
-  var doedssdato: LocalDate?,
+  var doedsdato: LocalDate?,
 
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
