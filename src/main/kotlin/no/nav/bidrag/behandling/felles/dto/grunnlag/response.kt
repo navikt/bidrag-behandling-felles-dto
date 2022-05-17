@@ -261,7 +261,7 @@ data class BarnDto(
   var foedselsdato: LocalDate?,
 
   @Schema(description = "Barnets fødselsår")
-  var foedselsaar: LocalDate?,
+  var foedselsaar: Int?,
 
   @Schema(description = "Barnets eventuelle dødsdato")
   var doedsdato: LocalDate?,
