@@ -249,12 +249,9 @@ data class BarnetilleggDto(
 // PDL-data
 data class BarnDto(
   @Schema(description = "Identen til barnet")
-  var personIdBarn: String?,
+  var personId: String?,
 
-  @Schema(description = "Person-id til forelder til barnet")
-  val personIdVoksen: String,
-
-  @Schema(description = "Navn på personen, format <Fornavn, mellomnavn, Etternavn")
+  @Schema(description = "Navn på barnet, format <Fornavn, mellomnavn, Etternavn")
   var navn: String?,
 
   @Schema(description = "Barnets fødselsdato")
