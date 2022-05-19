@@ -32,3 +32,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.22  | Endret       | Rettet skrivefeil                                                        |
 | 0.0.23  | Endret       | Endret datatype                                                          |
 | 0.0.24  | Endret       | Renamet Person til Forelder                                              |
+| 0.0.25  | Endret       | Pom oppdatert med siste versjon av bidrag-behandling-felles              |
