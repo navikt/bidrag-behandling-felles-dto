@@ -330,17 +330,23 @@ data class HusstandDto(
 )
 
 data class HusstandsmedlemDto(
+  @Schema(description = "Husstandsmedlemmet bor i husstanden fra- og med måned")
+  val periodeFra: LocalDate?,
+
+  @Schema(description = "Husstandsmedlemmet bor i husstanden til- og med måned")
+  val periodeTil: LocalDate?,
+
   @Schema(description = "Identen til husstandsmedlemmet")
   var personId: String?,
 
   @Schema(description = "Navn på husstandsmedlemmet, format <Fornavn, mellomnavn, Etternavn")
   var navn: String?,
 
-  @Schema(description = "Husstandsmedlemmet bor i husstanden fra- og med måned")
-  val periodeFra: LocalDate?,
+  @Schema(description = "Husstandsmedlemmets fødselsdag")
+  var foedselsdato: LocalDate?,
 
-  @Schema(description = "Husstandsmedlemmet bor i husstanden til- og med måned")
-  val periodeTil: LocalDate?,
+  @Schema(description = "Husstandsmedlemmets eventuelle dødsdato")
+  var doedsdato: LocalDate?,
 
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
