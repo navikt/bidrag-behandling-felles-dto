@@ -36,3 +36,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.26  | Endret       | Fødsels- og dødsdato lagt til på husstandsmedlemmer                      |
 | 0.0.27  | Endret       | Ny versjon bidrag-behandling-felles                                      |
 | 0.0.28  | Endret       | innsynHistoriskeInntekterDato fjernet fra GrunnlagRequestDto             |
+| 0.0.29  | Endret       | Lagt til personId i respons for PDL-data                                 |
