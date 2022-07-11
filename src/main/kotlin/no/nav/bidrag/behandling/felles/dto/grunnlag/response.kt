@@ -57,7 +57,7 @@ data class HentGrunnlagspakkeDto(
   @Schema(description = "Liste over en persons barn og hvilke perioder de eventuelt deler husstand med personen grunnlaget er hentet inn for")
   val egneBarnListe: List<EgneBarnDto>,
 
-  @Schema(description = "Periodisert liste over innhentede husstander for en person og dens husstandsmedlemmer")
+  @Schema(description = "Periodisert liste over innhentede husstander for en person og dens voksne husstandsmedlemmer")
   val husstandListe: List<HusstandDto>,
 
   @Schema(description = "Periodisert liste over en persons sivilstand")
@@ -331,8 +331,8 @@ data class HusstandDto(
   @Schema(description = "Opprettet tidspunkt")
   val opprettetTidspunkt: LocalDateTime,
 
-  @Schema(description = "Periodisert liste over voksne husstandsmedlemmer, barn er filtrert bort")
-  val voksneHusstandsmedlemmerListe: List<HusstandsmedlemDto>?
+  @Schema(description = "Periodisert liste over husstandsmedlemmer")
+  val husstandsmedlemmerListe: List<HusstandsmedlemDto>?
 )
 
 data class HusstandsmedlemDto(
