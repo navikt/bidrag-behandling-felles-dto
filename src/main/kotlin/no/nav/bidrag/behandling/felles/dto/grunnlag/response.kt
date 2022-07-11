@@ -245,8 +245,8 @@ data class BarnetilleggDto(
 
 // PDL-data
 data class EgneBarnDto(
-  @Schema(description = "Id til forelderen")
-  val personIdForelder: String,
+  @Schema(description = "Id til forelderen. Kan være null ved manuelle registreringer")
+  val personIdForelder: String?,
 
   @Schema(description = "Identen til barnet")
   var personIdBarn: String?,
@@ -290,7 +290,7 @@ data class BorISammeHusstandDto(
 
 data class HusstandDto(
   @Schema(description = "Id til personen husstandsinformasjonen er rapportert for")
-  val personId: String,
+  val personId: String?,
 
   @Schema(description = "Personen (BP) bor i husstanden fra- og med måned")
   val periodeFra: LocalDate,
@@ -321,6 +321,9 @@ data class HusstandDto(
 
   @Schema(description = "Nøkkel til geografisk adresse registrert i Kartverkets matrikkel")
   val matrikkelId: Long?,
+
+  @Schema(description = "Landkode, skal bare brukes for manuelt registrerte utlandsadresser")
+  val landkode: String?,
 
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
@@ -360,7 +363,7 @@ data class HusstandsmedlemDto(
 
 data class SivilstandDto(
   @Schema(description = "Id til personen sivilstanden er rapportert for")
-  val personId: String,
+  val personId: String?,
 
   @Schema(description = "Sivilstand gjelder fra- og med måned")
   val periodeFra: LocalDate?,
