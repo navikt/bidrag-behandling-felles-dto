@@ -54,6 +54,9 @@ data class HentGrunnlagspakkeDto(
   @Schema(description = "Periodisert liste over innhentet barnetillegg")
   val barnetilleggListe: List<BarnetilleggDto>,
 
+  @Schema(description = "Periodisert liste over innhentet kontantstøtte")
+  val kontantstotteListe: List<KontantstotteDto>,
+
   @Schema(description = "Liste over en persons barn og hvilke perioder de eventuelt deler husstand med personen grunnlaget er hentet inn for")
   val egneBarnListe: List<EgneBarnDto>,
 
@@ -240,6 +243,36 @@ data class BarnetilleggDto(
 
   @Schema(description = "Opprettet tidspunkt")
   val opprettetTidspunkt: LocalDateTime
+)
+
+data class KontantstotteDto(
+
+  @Schema(description = "Id til personen som mottar kontatstøtten")
+  val partPersonId: String,
+
+  @Schema(description = "Id til barnet kontatstøtten er for")
+  val barnPersonId: String,
+
+  @Schema(description = "Periode fra-dato")
+  val periodeFra: LocalDate,
+
+  @Schema(description = "Periode til-dato")
+  val periodeTil: LocalDate,
+
+  @Schema(description = "Angir om en inntektsopplysning er aktiv")
+  val aktiv: Boolean,
+
+  @Schema(description = "Tidspunkt inntekten tas i bruk")
+  val brukFra: LocalDateTime,
+
+  @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
+  val brukTil: LocalDateTime?,
+
+  @Schema(description = "Beløpet kontantstøtten er på")
+  val belop: Int,
+
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime
 )
 
 
