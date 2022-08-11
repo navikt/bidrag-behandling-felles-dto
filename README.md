@@ -38,4 +38,5 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.28  | Endret       | innsynHistoriskeInntekterDato fjernet fra GrunnlagRequestDto                |
 | 0.0.29  | Endret       | Lagt til personId i respons for PDL-data                                    |
 | 0.0.30  | Endret       | Gjort personId nullable for PDL-data for å håndtere manuelle registreringer |
-| 0.0.31  | Endret       | Endret navn voksneHusstandsmedlemmerListe -> husstandsmedlemmerListe        |     
+| 0.0.31  | Endret       | Endret navn voksneHusstandsmedlemmerListe -> husstandsmedlemmerListe        |   
+| 0.0.32  | Endret       | Lagt til Dto for kontantstøtte for bruk mot infotrygd-kontantstotte-v2      |     
