@@ -257,7 +257,7 @@ data class KontantstotteDto(
   val periodeFra: LocalDate,
 
   @Schema(description = "Periode til-dato")
-  val periodeTil: LocalDate,
+  val periodeTil: LocalDate?,
 
   @Schema(description = "Angir om en inntektsopplysning er aktiv")
   val aktiv: Boolean,
