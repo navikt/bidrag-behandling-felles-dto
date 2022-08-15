@@ -89,8 +89,8 @@ data class AinntektDto(
   @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
-  @Schema(description = "Opprettet tidspunkt")
-  val opprettetTidspunkt: LocalDateTime,
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Liste over poster for innhentede inntektsposter")
   val ainntektspostListe: List<AinntektspostDto>
@@ -154,8 +154,8 @@ data class SkattegrunnlagDto(
   @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
-  @Schema(description = "Opprettet tidspunkt")
-  val opprettetTidspunkt: LocalDateTime,
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Liste over poster med skattegrunnlag")
   val skattegrunnlagListe: List<SkattegrunnlagspostDto>
@@ -204,8 +204,8 @@ data class UtvidetBarnetrygdOgSmaabarnstilleggDto(
   @Schema(description = "Angir om stønaden er manuelt beregnet")
   val manueltBeregnet: Boolean,
 
-  @Schema(description = "Opprettet tidspunkt")
-  val opprettetTidspunkt: LocalDateTime
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime,
 )
 
 
@@ -241,8 +241,8 @@ data class BarnetilleggDto(
   @Schema(description = "Angir om barnet er felles- eller særkullsbarn")
   val barnType: String,
 
-  @Schema(description = "Opprettet tidspunkt")
-  val opprettetTidspunkt: LocalDateTime
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime,
 )
 
 data class KontantstotteDto(
@@ -299,8 +299,8 @@ data class EgneBarnDto(
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Opprettet tidspunkt")
-  val opprettetTidspunkt: LocalDateTime,
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Perioder barnet bor i samme husstand som aktuell forelder")
   val borISammeHusstandDtoListe: List<BorISammeHusstandDto>?
@@ -316,8 +316,8 @@ data class BorISammeHusstandDto(
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Opprettet tidspunkt")
-  val opprettetTidspunkt: LocalDateTime
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime,
 )
 
 
@@ -361,8 +361,8 @@ data class HusstandDto(
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Opprettet tidspunkt")
-  val opprettetTidspunkt: LocalDateTime,
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Periodisert liste over husstandsmedlemmer")
   val husstandsmedlemmerListe: List<HusstandsmedlemDto>?
@@ -390,8 +390,8 @@ data class HusstandsmedlemDto(
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Opprettet tidspunkt")
-  val opprettetTidspunkt: LocalDateTime
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime,
 )
 
 data class SivilstandDto(
@@ -410,6 +410,6 @@ data class SivilstandDto(
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
-  @Schema(description = "Opprettet tidspunkt")
-  val opprettetTidspunkt: LocalDateTime
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime,
 )
