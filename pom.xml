@@ -143,6 +143,11 @@
       <artifactId>bidrag-behandling-felles</artifactId>
       <version>${bidrag-behandling-felles.version}</version>
     </dependency>
+    <dependency>
+      <groupId>no.nav.bidrag</groupId>
+      <artifactId>bidrag-commons</artifactId>
+      <version>${bidrag-commons.version}</version>
+    </dependency>
   </dependencies>
 
   <build>
