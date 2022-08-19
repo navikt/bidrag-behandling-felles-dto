@@ -118,6 +118,9 @@ data class OpprettEngangsbelopRequestDto(
   @NotBlank
   val type: EngangsbelopType,
 
+  @Schema(description = "Referanse til sak")
+  val sakId: String?,
+
   @Schema(description ="Id til den som skal betale engangsbeløpet")
   @field:Pattern(regexp = "^[0-9]{9}$|^[0-9]{11}$", message = "Ugyldig format. Må inneholde eksakt 9 eller 11 siffer.")
   val skyldnerId: String,
