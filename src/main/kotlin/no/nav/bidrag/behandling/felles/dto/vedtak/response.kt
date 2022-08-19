@@ -102,6 +102,9 @@ data class EngangsbelopDto(
   @Schema(description =  "Type Engangsbeløp. Saertilskudd, gebyr m.m.")
   val type: EngangsbelopType,
 
+  @Schema(description = "Referanse til sak")
+  val sakId: String?,
+
   @Schema(description =  "Id til den som skal betale engangsbeløpet")
   val skyldnerId: String,
 
