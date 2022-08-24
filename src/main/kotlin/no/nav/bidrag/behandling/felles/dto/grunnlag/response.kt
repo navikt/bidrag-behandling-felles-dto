@@ -15,26 +15,26 @@ import java.time.LocalDateTime
 data class OppdaterGrunnlagspakkeDto(
 
   @Schema(description = "Grunnlagspakke-id")
-  val grunnlagspakkeId: Int?,
+  val grunnlagspakkeId: Int,
 
   @Schema(description = "Liste over grunnlagene som er hentet inn med person-id og status")
-  val grunnlagTypeResponsListe: List<OppdaterGrunnlagDto>?
+  val grunnlagTypeResponsListe: List<OppdaterGrunnlagDto>
 )
 
 
 data class OppdaterGrunnlagDto(
 
   @Schema(description = "Hvilken type grunnlag som er hentet")
-  val type: GrunnlagRequestType?,
+  val type: GrunnlagRequestType,
 
   @Schema(description = "Angir personId som grunnlag er hentet for")
-  val personId: String?,
+  val personId: String,
 
   @Schema(description = "Status for utført kall")
-  val status: GrunnlagsRequestStatus?,
+  val status: GrunnlagsRequestStatus,
 
   @Schema(description = "Statusmelding for utført kall")
-  val statusMelding: String?,
+  val statusMelding: String,
 
   )
 
@@ -42,34 +42,34 @@ data class OppdaterGrunnlagDto(
 data class HentGrunnlagspakkeDto(
 
   @Schema(description = "grunnlagspakke-id")
-  val grunnlagspakkeId: Int?,
+  val grunnlagspakkeId: Int,
 
   @Schema(description = "Periodisert liste over innhentede inntekter fra a-inntekt og underliggende poster")
-  val ainntektListe: List<AinntektDto>?,
+  val ainntektListe: List<AinntektDto>,
 
   @Schema(description = "Periodisert liste over innhentede fra skatt og underliggende poster")
-  val skattegrunnlagListe: List<SkattegrunnlagDto>?,
+  val skattegrunnlagListe: List<SkattegrunnlagDto>,
 
   @Schema(description = "Periodisert liste over innhentet utvidet barnetrygd og småbarnstillegg")
-  val ubstListe: List<UtvidetBarnetrygdOgSmaabarnstilleggDto>?,
+  val ubstListe: List<UtvidetBarnetrygdOgSmaabarnstilleggDto>,
 
   @Schema(description = "Periodisert liste over innhentet barnetillegg")
-  val barnetilleggListe: List<BarnetilleggDto>?,
+  val barnetilleggListe: List<BarnetilleggDto>,
 
   @Schema(description = "Periodisert liste over innhentet kontantstøtte")
-  val kontantstotteListe: List<KontantstotteDto>?,
+  val kontantstotteListe: List<KontantstotteDto>,
 
   @Schema(description = "Liste over en persons barn og hvilke perioder de eventuelt deler husstand med personen grunnlaget er hentet inn for")
-  val egneBarnListe: List<EgneBarnDto>?,
+  val egneBarnListe: List<EgneBarnDto>,
 
   @Schema(description = "Periodisert liste over innhentede husstander for en person og dens voksne husstandsmedlemmer")
-  val husstandListe: List<HusstandDto>?,
+  val husstandListe: List<HusstandDto>,
 
   @Schema(description = "Periodisert liste over en persons sivilstand")
-  val sivilstandListe: List<SivilstandDto>?,
+  val sivilstandListe: List<SivilstandDto>,
 
   @Schema(description = "Periodisert liste over innhentet barnetilsyn")
-  val barnetilsynListe: List<BarnetilsynDto>?
+  val barnetilsynListe: List<BarnetilsynDto>
 
 )
 
@@ -77,28 +77,28 @@ data class HentGrunnlagspakkeDto(
 data class AinntektDto(
 
   @Schema(description = "Id til personen inntekten er rapportert for")
-  val personId: String?,
+  val personId: String,
 
   @Schema(description = "Periode fra-dato")
-  val periodeFra: LocalDate?,
+  val periodeFra: LocalDate,
 
   @Schema(description = "Periode til-dato")
-  val periodeTil: LocalDate?,
+  val periodeTil: LocalDate,
 
   @Schema(description = "Angir om en inntektsopplysning er aktiv")
-  val aktiv: Boolean?,
+  val aktiv: Boolean,
 
   @Schema(description = "Tidspunkt inntekten taes i bruk")
-  val brukFra: LocalDateTime?,
+  val brukFra: LocalDateTime,
 
   @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?,
+  val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Liste over poster for innhentede inntektsposter")
-  val ainntektspostListe: List<AinntektspostDto>?
+  val ainntektspostListe: List<AinntektspostDto>
 )
 
 
@@ -120,7 +120,7 @@ data class AinntektspostDto (
   val virksomhetId: String?,
 
   @Schema(description = "Type inntekt, Lonnsinntekt, Naeringsinntekt, Pensjon eller trygd, Ytelse fra offentlig")
-  val inntektType: String?,
+  val inntektType: String,
 
   @Schema(description = "Type fordel, Kontantytelse, Naturalytelse, Utgiftsgodtgjorelse")
   val fordelType: String?,
@@ -129,7 +129,7 @@ data class AinntektspostDto (
   val beskrivelse: String?,
 
   @Schema(description = "Belop")
-  val belop: BigDecimal?,
+  val belop: BigDecimal,
 
   @Schema(description = "Fra-dato etterbetaling")
   val etterbetalingsperiodeFra: LocalDate?,
@@ -142,144 +142,143 @@ data class AinntektspostDto (
 data class SkattegrunnlagDto(
 
   @Schema(description = "Id til personen inntekten er rapportert for")
-  val personId: String?,
+  val personId: String,
 
   @Schema(description = "Periode fra")
-  val periodeFra: LocalDate?,
+  val periodeFra: LocalDate,
 
   @Schema(description = "Periode frem til")
-  val periodeTil: LocalDate?,
+  val periodeTil: LocalDate,
 
   @Schema(description = "Angir om en inntektsopplysning er aktiv")
-  val aktiv: Boolean?,
+  val aktiv: Boolean,
 
   @Schema(description = "Tidspunkt inntekten taes i bruk")
-  val brukFra: LocalDateTime?,
+  val brukFra: LocalDateTime,
 
   @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?,
+  val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Liste over poster med skattegrunnlag")
-  val skattegrunnlagListe: List<SkattegrunnlagspostDto>?
+  val skattegrunnlagListe: List<SkattegrunnlagspostDto>
 )
 
 
 data class SkattegrunnlagspostDto(
 
   @Schema(description = "Type skattegrunnlag, ordinær eller Svalbard")
-  val skattegrunnlagType: String?,
+  val skattegrunnlagType: String,
 
   @Schema(description = "Type inntekt, Lonnsinntekt, Naeringsinntekt, Pensjon eller trygd, Ytelse fra offentlig")
-  val inntektType: String?,
+  val inntektType: String,
 
   @Schema(description = "Belop")
-  val belop: BigDecimal?
+  val belop: BigDecimal
 )
 
 
 data class UtvidetBarnetrygdOgSmaabarnstilleggDto(
 
   @Schema(description = "Id til personen ubst er rapportert for")
-  val personId: String?,
+  val personId: String,
 
   @Schema(description = "Type stønad, utvidet barnetrygd eller småbarnstillegg")
-  val type: String?,
+  val type: String,
 
   @Schema(description = "Periode fra- og med måned")
-  val periodeFra: LocalDate?,
+  val periodeFra: LocalDate,
 
   @Schema(description = "Periode til- og med måned")
   val periodeTil: LocalDate?,
 
   @Schema(description = "Angir om en stønad er aktiv")
-  val aktiv: Boolean?,
+  val aktiv: Boolean,
 
   @Schema(description = "Tidspunkt stønaden taes i bruk")
-  val brukFra: LocalDateTime?,
+  val brukFra: LocalDateTime,
 
   @Schema(description = "Tidspunkt stønaden ikke lenger er aktiv. Null betyr at stønaden er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Beløp")
-  val belop: BigDecimal?,
+  val belop: BigDecimal,
 
   @Schema(description = "Angir om stønaden er manuelt beregnet")
-  val manueltBeregnet: Boolean?,
+  val manueltBeregnet: Boolean,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?
+  val hentetTidspunkt: LocalDateTime,
 )
 
 
 data class BarnetilleggDto(
 
   @Schema(description = "Id til personen barnetillegg er rapportert for")
-  val partPersonId: String?,
+  val partPersonId: String,
 
   @Schema(description = "Id til barnet barnetillegget er rapportert for")
-  val barnPersonId: String?,
+  val barnPersonId: String,
 
   @Schema(description = "Type barnetillegg")
-  val barnetilleggType: String?,
+  val barnetilleggType: String,
 
   @Schema(description = "Periode fra- og med måned")
-  val periodeFra: LocalDate?,
+  val periodeFra: LocalDate,
 
   @Schema(description = "Periode til- og med måned")
   val periodeTil: LocalDate?,
 
   @Schema(description = "Angir om en stønad er aktiv")
-  val aktiv: Boolean?,
+  val aktiv: Boolean,
 
   @Schema(description = "Tidspunkt stønaden taes i bruk")
-  val brukFra: LocalDateTime?,
+  val brukFra: LocalDateTime,
 
   @Schema(description = "Tidspunkt stønaden ikke lenger er aktiv. Null betyr at stønaden er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Bruttobeløp")
-  val belopBrutto: BigDecimal?,
+  val belopBrutto: BigDecimal,
 
   @Schema(description = "Angir om barnet er felles- eller særkullsbarn")
-  val barnType: String?,
+  val barnType: String,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?
+  val hentetTidspunkt: LocalDateTime,
 )
 
 data class KontantstotteDto(
 
   @Schema(description = "Id til personen som mottar kontatstøtten")
-  val partPersonId: String?,
+  val partPersonId: String,
 
   @Schema(description = "Id til barnet kontatstøtten er for")
-  val barnPersonId: String?,
+  val barnPersonId: String,
 
   @Schema(description = "Periode fra-dato")
-  val periodeFra: LocalDate?,
+  val periodeFra: LocalDate,
 
   @Schema(description = "Periode til-dato")
   val periodeTil: LocalDate?,
 
   @Schema(description = "Angir om en inntektsopplysning er aktiv")
-  val aktiv: Boolean?,
+  val aktiv: Boolean,
 
   @Schema(description = "Tidspunkt inntekten tas i bruk")
-  val brukFra: LocalDateTime?,
+  val brukFra: LocalDateTime,
 
   @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Beløpet kontantstøtten er på")
-  val belop: Int?,
+  val belop: Int,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?
+  val hentetTidspunkt: LocalDateTime
 )
-
 
 // PDL-data
 data class EgneBarnDto(
@@ -305,7 +304,7 @@ data class EgneBarnDto(
   val opprettetAv: String?,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?,
+  val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Perioder barnet bor i samme husstand som aktuell forelder")
   val borISammeHusstandDtoListe: List<BorISammeHusstandDto>?
@@ -322,16 +321,15 @@ data class BorISammeHusstandDto(
   val opprettetAv: String?,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?,
+  val hentetTidspunkt: LocalDateTime,
 )
-
 
 data class HusstandDto(
   @Schema(description = "Id til personen husstandsinformasjonen er rapportert for")
   val personId: String?,
 
   @Schema(description = "Personen (BP) bor i husstanden fra- og med måned")
-  val periodeFra: LocalDate?,
+  val periodeFra: LocalDate,
 
   @Schema(description = "Personen (BP) bor i husstanden til- og med måned")
   val periodeTil: LocalDate?,
@@ -367,7 +365,7 @@ data class HusstandDto(
   val opprettetAv: String?,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?,
+  val hentetTidspunkt: LocalDateTime,
 
   @Schema(description = "Periodisert liste over husstandsmedlemmer")
   val husstandsmedlemmerListe: List<HusstandsmedlemDto>?
@@ -396,7 +394,7 @@ data class HusstandsmedlemDto(
   val opprettetAv: String?,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?
+  val hentetTidspunkt: LocalDateTime,
 )
 
 data class SivilstandDto(
@@ -410,46 +408,47 @@ data class SivilstandDto(
   val periodeTil: LocalDate?,
 
   @Schema(description = "Personens sivilstand")
-  val sivilstand: SivilstandKode?,
+  val sivilstand: SivilstandKode,
 
   @Schema(description = "Manuelt opprettet av")
   val opprettetAv: String?,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?,
+  val hentetTidspunkt: LocalDateTime,
 )
 
 data class BarnetilsynDto(
+
   @Schema(description = "Id til personen som mottar barnetilsynet")
-  val partPersonId: String?,
+  val partPersonId: String,
 
   @Schema(description = "Id til barnet barnetilsynet er for")
-  val barnPersonId: String?,
+  val barnPersonId: String,
 
   @Schema(description = "Periode fra-dato")
-  val periodeFra: LocalDate?,
+  val periodeFra: LocalDate,
 
   @Schema(description = "Periode til-dato")
   val periodeTil: LocalDate?,
 
   @Schema(description = "Angir om en inntektsopplysning er aktiv")
-  val aktiv: Boolean?,
+  val aktiv: Boolean,
 
   @Schema(description = "Tidspunkt inntekten tas i bruk")
-  val brukFra: LocalDateTime?,
+  val brukFra: LocalDateTime,
 
   @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Beløpet barnetilsynet er på")
-  val belop: Int?,
+  val belop: Int,
 
   @Schema(description = "Angir om barnetilsynet er heltid eller deltid")
   val tilsynstype: Tilsyntype?,
 
   @Schema(description = "Angir om barnet er over eller under skolealder")
-  val skolealder: Skolealder?,
+  val skolealder: Skolealder,
 
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime?
+  val hentetTidspunkt: LocalDateTime
 )
