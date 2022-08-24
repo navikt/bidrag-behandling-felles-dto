@@ -44,4 +44,5 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.34  | Endret       | opprettetTidspunkt endret tilbake til hentetTidspunkt                       |     
 | 0.0.35  | Endret       | sakId lagt til for engangsbeløp                                             |     
 | 0.0.36  | Endret       | Lagt tilbake logikk for sporing                                             |     
-
+| 0.0.37  | Endret       | Lagt til Dto for barnetilsyn for bruk mot familie-ef-sak                    |     
+| 0.0.38  | Endret       | Oppdatert versjon av bidrag-behandling-felles                               |     

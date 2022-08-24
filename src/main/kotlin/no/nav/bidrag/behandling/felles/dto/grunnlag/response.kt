@@ -4,6 +4,8 @@ import io.swagger.v3.oas.annotations.media.Schema
 import no.nav.bidrag.behandling.felles.enums.GrunnlagRequestType
 import no.nav.bidrag.behandling.felles.enums.GrunnlagsRequestStatus
 import no.nav.bidrag.behandling.felles.enums.SivilstandKode
+import no.nav.bidrag.behandling.felles.enums.barnetilsyn.Skolealder
+import no.nav.bidrag.behandling.felles.enums.barnetilsyn.Tilsyntype
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -64,7 +66,10 @@ data class HentGrunnlagspakkeDto(
   val husstandListe: List<HusstandDto>?,
 
   @Schema(description = "Periodisert liste over en persons sivilstand")
-  val sivilstandListe: List<SivilstandDto>?
+  val sivilstandListe: List<SivilstandDto>?,
+
+  @Schema(description = "Periodisert liste over innhentet barnetilsyn")
+  val barnetilsynListe: List<BarnetilsynDto>?
 
   )
 
@@ -275,8 +280,7 @@ data class KontantstotteDto(
   val hentetTidspunkt: LocalDateTime?
 )
 
-
-// PDL-data
+// <PDL-data>
 data class EgneBarnDto(
   @Schema(description = "Id til forelderen. Kan være null ved manuelle registreringer")
   val personIdForelder: String?,
@@ -413,3 +417,41 @@ data class SivilstandDto(
   @Schema(description = "Hentet tidspunkt")
   val hentetTidspunkt: LocalDateTime?,
 )
+// </PDL-data>
+
+
+data class BarnetilsynDto(
+  @Schema(description = "Id til personen som mottar barnetilsynet")
+  val partPersonId: String?,
+
+  @Schema(description = "Id til barnet barnetilsynet er for")
+  val barnPersonId: String?,
+
+  @Schema(description = "Periode fra-dato")
+  val periodeFra: LocalDate?,
+
+  @Schema(description = "Periode til-dato")
+  val periodeTil: LocalDate?,
+
+  @Schema(description = "Angir om en inntektsopplysning er aktiv")
+  val aktiv: Boolean?,
+
+  @Schema(description = "Tidspunkt inntekten tas i bruk")
+  val brukFra: LocalDateTime?,
+
+  @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
+  val brukTil: LocalDateTime?,
+
+  @Schema(description = "Beløpet barnetilsynet er på")
+  val belop: Int?,
+
+  @Schema(description = "Angir om barnetilsynet er heltid eller deltid")
+  val tilsynstype: Tilsyntype?,
+
+  @Schema(description = "Angir om barnet er over eller under skolealder")
+  val skolealder: Skolealder?,
+
+  @Schema(description = "Hentet tidspunkt")
+  val hentetTidspunkt: LocalDateTime?
+)
+

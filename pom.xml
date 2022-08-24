@@ -3,7 +3,7 @@
 
   <groupId>no.nav.bidrag</groupId>
   <artifactId>bidrag-behandling-felles-dto</artifactId>
-  <version>0.0.36-SNAPSHOT</version>
+  <version>0.0.39-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>bidrag-behandling-felles-dto</name>
   <description>Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling av bidrag</description>
@@ -28,7 +28,7 @@
     <java.version>17</java.version>
     <kotlin.version>1.6.10</kotlin.version>
     <springdoc-openapi-ui.version>1.6.6</springdoc-openapi-ui.version>
-    <bidrag-behandling-felles.version>0.0.37</bidrag-behandling-felles.version>
+    <bidrag-behandling-felles.version>0.0.39</bidrag-behandling-felles.version>
     <bidrag-commons.version>0.6.7</bidrag-commons.version>
 
     <!-- build -->
