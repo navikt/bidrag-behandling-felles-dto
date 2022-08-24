@@ -46,4 +46,5 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.36  | Endret       | Lagt tilbake logikk for sporing                                             |     
 | 0.0.37  | Endret       | Lagt til Dto for barnetilsyn for bruk mot familie-ef-sak                    |     
 | 0.0.38  | Endret       | Oppdatert versjon av bidrag-behandling-felles                               |     
-| 0.0.39  | Endret       | Endre alle felt i responsklasser for bidrag-grunnlag til nullable)          |     
+| 0.0.39  | Endret       | Endre alle felt i responsklasser for bidrag-grunnlag til nullable           |     
+| 0.0.40  | Endret       | Endre tilbake forrige endring pga følgefeil. Avventer dette.                |     

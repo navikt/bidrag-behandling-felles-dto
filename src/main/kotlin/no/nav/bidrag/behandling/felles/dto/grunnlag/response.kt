@@ -71,7 +71,7 @@ data class HentGrunnlagspakkeDto(
   @Schema(description = "Periodisert liste over innhentet barnetilsyn")
   val barnetilsynListe: List<BarnetilsynDto>?
 
-  )
+)
 
 
 data class AinntektDto(
@@ -280,7 +280,8 @@ data class KontantstotteDto(
   val hentetTidspunkt: LocalDateTime?
 )
 
-// <PDL-data>
+
+// PDL-data
 data class EgneBarnDto(
   @Schema(description = "Id til forelderen. Kan være null ved manuelle registreringer")
   val personIdForelder: String?,
@@ -417,8 +418,6 @@ data class SivilstandDto(
   @Schema(description = "Hentet tidspunkt")
   val hentetTidspunkt: LocalDateTime?,
 )
-// </PDL-data>
-
 
 data class BarnetilsynDto(
   @Schema(description = "Id til personen som mottar barnetilsynet")
@@ -454,4 +453,3 @@ data class BarnetilsynDto(
   @Schema(description = "Hentet tidspunkt")
   val hentetTidspunkt: LocalDateTime?
 )
-
