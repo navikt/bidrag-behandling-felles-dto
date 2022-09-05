@@ -50,3 +50,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.40  | Endret       | Endre tilbake forrige endring pga følgefeil. Avventer dette.                |     
 | 0.0.41  | Endret       | Nytt forsøk.                                                                |     
 | 0.0.42  | Endret       | Oppdaterer barnetilsynDto slik at beløp og skoelalder kan være nullable     |     
+| 0.0.43  | Endret       | Fjernet unødvendige avhengigheter                                           |     
