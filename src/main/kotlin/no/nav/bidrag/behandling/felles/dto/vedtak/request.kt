@@ -77,9 +77,6 @@ data class OpprettStonadsendringRequestDto(
   @Schema(description = "Referanse til sak")
   val sakId: String?,
 
-  @Schema(description = "Søknadsid, referanse til batchkjøring, fritekst")
-  val behandlingId: String?,
-
   @Schema(description = "Id til den som skal betale bidraget")
   @field:Pattern(
     regexp = "^[0-9]{9}$|^[0-9]{11}$",

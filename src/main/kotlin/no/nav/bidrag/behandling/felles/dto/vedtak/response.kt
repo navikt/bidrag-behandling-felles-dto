@@ -70,9 +70,6 @@ data class StonadsendringDto(
   @Schema(description = "Referanse til sak")
   val sakId: String?,
 
-  @Schema(description = "Søknadsid, referanse til batchkjøring, fritekst")
-  val behandlingId: String?,
-
   @Schema(description = "Id til den som skal betale bidraget")
   val skyldnerId: String,
 
