@@ -1,5 +1,6 @@
 package no.nav.bidrag.behandling.felles.dto.vedtak
 
+import no.nav.bidrag.behandling.felles.enums.EngangsbelopType
 import no.nav.bidrag.behandling.felles.enums.StonadType
 import no.nav.bidrag.behandling.felles.enums.VedtakType
 import java.math.BigDecimal
@@ -18,7 +19,7 @@ data class VedtakHendelse(
 {
   val sporing: Sporingsdata = Sporingsdata(
     CorrelationId.fetchCorrelationIdForThread()
-      ?: CorrelationId.generateTimestamped(stonadType.toString())
+      ?: CorrelationId.generateTimestamped(vedtakType.toString())
         .get()
   )
 }
