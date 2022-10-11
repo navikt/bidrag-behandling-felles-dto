@@ -8,23 +8,19 @@ import java.time.LocalDateTime
 import no.nav.bidrag.commons.CorrelationId
 
 data class VedtakHendelse(
-  val vedtakId: Int,
   val vedtakType: VedtakType,
-  val stonadType: StonadType,
-  val sakId: String?,
-  val skyldnerId: String,
-  val kravhaverId: String,
-  val mottakerId: String,
   val opprettetAv: String,
-  val opprettetTimestamp: LocalDateTime,
-  val periodeListe: List<VedtakHendelsePeriode>
-) {
+  val vedtakDato: LocalDate?,
+  val enhetId: String,
+  val stonadsendringListe: List<Stonadsendring>?,
+  val engangsbelopListe: List<Engangsbelop>?
+)
+{
   val sporing: Sporingsdata = Sporingsdata(
-    CorrelationId.fetchCorrelationIdForThread() ?: CorrelationId.generateTimestamped(stonadType.toString())
-      .get()
+    CorrelationId.fetchCorrelationIdForThread()
+      ?: CorrelationId.generateTimestamped(stonadType.toString())
+        .get()
   )
-  fun hentStonadType() = StonadType.values().find { it.name == stonadType.toString() } ?: StonadType.NO_SUPPORT
-  private fun doThrow(message: String): String = throw IllegalStateException(message)
 }
 
 data class Sporingsdata(val correlationId: String) {
@@ -35,9 +31,30 @@ data class Sporingsdata(val correlationId: String) {
   var opprettetAv: String? = null
 }
 
-data class VedtakHendelsePeriode(
-  val periodeFom: LocalDate,
-  val periodeTil: LocalDate?,
+data class Stonadsendring(
+  val stonadType: StonadType,
+  val sakId: String?,
+  val skyldnerId: String,
+  val kravhaverId: String,
+  val mottakerId: String,
+  val periodeListe: List<Periode>
+)
+
+data class Engangsbelop(
+  val endrerEngangsbelopId: Int?,
+  val type: EngangsbelopType,
+  val sakId: String?,
+  val skyldnerId: String,
+  val kravhaverId: String,
+  val mottakerId: String,
+  val belop: BigDecimal,
+  val valutakode: String,
+  val resultatkode: String
+)
+
+data class Periode(
+  val periodeFomDato: LocalDate,
+  val periodeTilDato: LocalDate?,
   val belop: BigDecimal,
   val valutakode: String,
   val resultatkode: String
