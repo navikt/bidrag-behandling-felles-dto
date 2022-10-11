@@ -10,9 +10,11 @@ import no.nav.bidrag.commons.CorrelationId
 
 data class VedtakHendelse(
   val vedtakType: VedtakType,
-  val opprettetAv: String,
+  val vedtakId: Int,
   val vedtakDato: LocalDate?,
   val enhetId: String,
+  val opprettetAv: String,
+  val opprettetTidspunkt: LocalDateTime,
   val stonadsendringListe: List<Stonadsendring>?,
   val engangsbelopListe: List<Engangsbelop>?
 )
