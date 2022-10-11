@@ -52,3 +52,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.42  | Endret       | Oppdaterer barnetilsynDto slik at beløp og skoelalder kan være nullable              |     
 | 0.0.43  | Endret       | Fjernet unødvendige avhengigheter                                                    |     
 | 0.0.44  | Endret       | Fjernet behandlingId fra stønadsendring på vedtak + lagt tilbake build-plugins i pom |     
+| 0.0.45  | Endret       | VedtakHendelse omskrevet, er nå basert på OpprettVedtakRequestDto                    |     
