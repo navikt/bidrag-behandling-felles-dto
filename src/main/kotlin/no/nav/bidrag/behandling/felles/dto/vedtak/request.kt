@@ -142,6 +142,9 @@ data class OpprettEngangsbelopRequestDto(
   @NotBlank
   val resultatkode: String,
 
+  @Schema(description = "Referanse - beslutningslinjeId -> bidrag-regnskap")
+  val referanse: String?,
+
   @Schema(description ="Liste over alle grunnlag som inngår i engangsbeløpet")
   @NotEmpty
   val grunnlagReferanseListe: List<String>
@@ -181,6 +184,9 @@ data class OpprettVedtakPeriodeRequestDto(
   @Schema(description = "Resultatkoden tilhørende stønadsbeløpet")
   @NotBlank
   val resultatkode: String,
+
+  @Schema(description = "Referanse - beslutningslinjeId -> bidrag-regnskap")
+  val referanse: String?,
 
   @Schema(description = "Liste over alle grunnlag som inngår i perioden")
   @NotEmpty

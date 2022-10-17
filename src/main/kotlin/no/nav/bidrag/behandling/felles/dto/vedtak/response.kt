@@ -120,6 +120,9 @@ data class EngangsbelopDto(
   @Schema(description =  "Resultatkoden tilhørende engangsbeløpet")
   val resultatkode: String,
 
+  @Schema(description = "Referanse - beslutningslinjeId -> bidrag-regnskap")
+  val referanse: String?,
+
   @Schema(description =  "Liste over alle grunnlag som inngår i beregningen")
   val grunnlagReferanseListe: List<String>
 )
@@ -153,6 +156,9 @@ data class VedtakPeriodeDto(
 
   @Schema(description = "Resultatkoden tilhørende  stønadsbeløpet")
   val resultatkode: String,
+
+  @Schema(description = "Referanse - beslutningslinjeId -> bidrag-regnskap")
+  val referanse: String?,
 
   @Schema(description = "Liste over alle grunnlag som inngår i perioden")
   val grunnlagReferanseListe: List<String>
