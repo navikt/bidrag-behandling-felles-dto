@@ -52,7 +52,8 @@ data class Engangsbelop(
   val mottakerId: String,
   val belop: BigDecimal,
   val valutakode: String,
-  val resultatkode: String
+  val resultatkode: String,
+  val referanse: String?
 )
 
 data class Periode(
@@ -60,5 +61,6 @@ data class Periode(
   val periodeTilDato: LocalDate?,
   val belop: BigDecimal,
   val valutakode: String,
-  val resultatkode: String
-)
+  val resultatkode: String,
+  val referanse: String?
+  )
