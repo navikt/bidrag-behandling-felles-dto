@@ -11,8 +11,10 @@ import no.nav.bidrag.commons.CorrelationId
 data class VedtakHendelse(
   val vedtakType: VedtakType,
   val vedtakId: Int,
-  val vedtakDato: LocalDate?,
+  val vedtakDato: LocalDate,
   val enhetId: String,
+  val eksternReferanse: String?,
+  val utsattTilDato: LocalDate?,
   val opprettetAv: String,
   val opprettetTidspunkt: LocalDateTime,
   val stonadsendringListe: List<Stonadsendring>?,
@@ -36,7 +38,7 @@ data class Sporingsdata(val correlationId: String) {
 
 data class Stonadsendring(
   val stonadType: StonadType,
-  val sakId: String?,
+  val sakId: String,
   val skyldnerId: String,
   val kravhaverId: String,
   val mottakerId: String,
@@ -44,9 +46,9 @@ data class Stonadsendring(
 )
 
 data class Engangsbelop(
-  val endrerEngangsbelopId: Int?,
+  val engangsbelopId: Int,
   val type: EngangsbelopType,
-  val sakId: String?,
+  val sakId: String,
   val skyldnerId: String,
   val kravhaverId: String,
   val mottakerId: String,

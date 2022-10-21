@@ -108,7 +108,7 @@ data class OpprettStonadsendringRequestDto(
 @Schema
 data class OpprettEngangsbelopRequestDto(
 
-  @Schema(description ="Id for eventuelt engangsbeløp som skal endres")
+  @Schema(description ="Id for eventuelt engangsbeløp som skal endres, skal være id for opprinnelig engangsbeløp")
   val endrerEngangsbelopId: Int?,
 
   @Schema(description ="Beløpstype. Saertilskudd, gebyr m.m.")

@@ -93,7 +93,7 @@ data class EngangsbelopDto(
   @Schema(description = "Løpenr innenfor vedtak")
   val lopenr: Int,
 
-  @Schema(description =  "Id for eventuelt engangsbeløp som skal endres")
+  @Schema(description =  "Id for eventuelt engangsbeløp som skal endres, skal være id for opprinnelig engangsbeløp")
   val endrerEngangsbelopId: Int?,
 
   @Schema(description =  "Type Engangsbeløp. Saertilskudd, gebyr m.m.")
