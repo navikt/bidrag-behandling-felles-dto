@@ -56,3 +56,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.46  | Endret       | Noen rettinger på ny VedtakHendelse                                                                |     
 | 0.0.47  | Endret       | Referanse lagt til på engangsbeløp og periode under stønadsendring, skal brukes av bidrag-regnskap |     
 | 0.0.48  | Endret       | Justeringer VedtakHendelse og vedtaksDto                                                           |     
+| 0.0.49  | Endret       | utsattTilDato og eksternReferanse lagt til på vedtak request og response                           |     

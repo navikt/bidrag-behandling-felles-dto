@@ -23,10 +23,16 @@ data class VedtakDto(
   var opprettetAv: String,
 
   @Schema(description = "Dato vedtaket er fattet")
-  val vedtakDato: LocalDate?,
+  val vedtakDato: LocalDate,
 
   @Schema(description = "Id til enheten som er ansvarlig for vedtaket")
   var enhetId: String,
+
+  @Schema(description = "Referanse som brukes i utlandssaker")
+  val eksternReferanse: String?,
+
+  @Schema(description = "Settes hvis overføring til Elin skal utsettes")
+  val utsattTilDato: LocalDate?,
 
   @Schema(description = "Opprettet timestamp")
   var opprettetTimestamp: LocalDateTime,
@@ -68,7 +74,7 @@ data class StonadsendringDto(
   val stonadType: StonadType,
 
   @Schema(description = "Referanse til sak")
-  val sakId: String?,
+  val sakId: String,
 
   @Schema(description = "Id til den som skal betale bidraget")
   val skyldnerId: String,
@@ -87,7 +93,7 @@ data class StonadsendringDto(
 @Schema
 data class EngangsbelopDto(
 
-  @Schema(description =  "Id for engangsbeløpet, må returneres for å kunne endres senere")
+  @Schema(description ="Vil inneholde opprinnelig engangsbeløpId, også der det har vært korrigeringer")
   val engangsbelopId: Int,
 
   @Schema(description = "Løpenr innenfor vedtak")
@@ -100,7 +106,7 @@ data class EngangsbelopDto(
   val type: EngangsbelopType,
 
   @Schema(description = "Referanse til sak")
-  val sakId: String?,
+  val sakId: String,
 
   @Schema(description =  "Id til den som skal betale engangsbeløpet")
   val skyldnerId: String,

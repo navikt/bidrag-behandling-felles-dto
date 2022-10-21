@@ -26,11 +26,17 @@ data class OpprettVedtakRequestDto(
   val opprettetAv: String,
 
   @Schema(description = "Dato vedtaket er fattet")
-  val vedtakDato: LocalDate?,
+  val vedtakDato: LocalDate,
 
   @Schema(description = "Id til enheten som er ansvarlig for vedtaket")
   @NotBlank
   val enhetId: String,
+
+  @Schema(description = "Referanse som brukes i utlandssaker")
+  val eksternReferanse: String?,
+
+  @Schema(description = "Settes hvis overføring til Elin skal utsettes")
+  val utsattTilDato: LocalDate?,
 
   @Schema(description = "Liste over alle grunnlag som inngår i vedtaket")
   @field:Valid
@@ -75,7 +81,7 @@ data class OpprettStonadsendringRequestDto(
   val stonadType: StonadType,
 
   @Schema(description = "Referanse til sak")
-  val sakId: String?,
+  val sakId: String,
 
   @Schema(description = "Id til den som skal betale bidraget")
   @field:Pattern(
@@ -116,7 +122,7 @@ data class OpprettEngangsbelopRequestDto(
   val type: EngangsbelopType,
 
   @Schema(description = "Referanse til sak")
-  val sakId: String?,
+  val sakId: String,
 
   @Schema(description ="Id til den som skal betale engangsbeløpet")
   @field:Pattern(regexp = "^[0-9]{9}$|^[0-9]{11}$", message = "Ugyldig format. Må inneholde eksakt 9 eller 11 siffer.")
