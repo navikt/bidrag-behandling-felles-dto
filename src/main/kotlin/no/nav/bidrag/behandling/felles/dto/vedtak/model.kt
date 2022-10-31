@@ -55,7 +55,8 @@ data class Engangsbelop(
   val belop: BigDecimal,
   val valutakode: String,
   val resultatkode: String,
-  val referanse: String?
+  val referanse: String?,
+  val endrerEngangsbelopId: Int?
 )
 
 data class Periode(
