@@ -85,6 +85,9 @@ data class StonadsendringDto(
   @Schema(description = "Id til den som mottar bidraget")
   val mottakerId: String,
 
+  @Schema(description = "Angir første år en stønad skal indeksreguleres")
+  val indeksreguleringAar: String?,
+
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   val periodeListe: List<VedtakPeriodeDto>
 )

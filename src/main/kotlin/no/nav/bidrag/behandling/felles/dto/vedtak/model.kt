@@ -42,6 +42,7 @@ data class Stonadsendring(
   val skyldnerId: String,
   val kravhaverId: String,
   val mottakerId: String,
+  val indeksreguleringAar: String?,
   val periodeListe: List<Periode>
 )
 

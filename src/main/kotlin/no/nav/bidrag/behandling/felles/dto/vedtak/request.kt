@@ -8,6 +8,7 @@ import no.nav.bidrag.behandling.felles.enums.StonadType
 import no.nav.bidrag.behandling.felles.enums.VedtakType
 import java.math.BigDecimal
 import java.time.LocalDate
+import java.time.Year
 import javax.validation.Valid
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotBlank
@@ -103,6 +104,9 @@ data class OpprettStonadsendringRequestDto(
     message = "Ugyldig format. Må inneholde eksakt 9 eller 11 siffer."
   )
   val mottakerId: String,
+
+  @Schema(description = "Angir første år en stønad skal indeksreguleres")
+  val indeksreguleringAar: String?,
 
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   @field:Valid
