@@ -59,3 +59,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.49  | Endret       | utsattTilDato og eksternReferanse lagt til på vedtak request og response                           |     
 | 0.0.50  | Endret       | endrerEngangsbelopId lagt til på Engangsbelop -> Kafka-topic.                                      |     
 | 0.0.51  | Endret       | indeksreguleringAar lagt til på stønadsendringsnivå for bidrag-vedtak                              |     
+| 0.0.52  | Endret       | indeksreguleringAar lagt til på stønadnivå for bidrag-stonad                                       |     

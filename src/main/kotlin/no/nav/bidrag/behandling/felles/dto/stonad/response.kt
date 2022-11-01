@@ -25,6 +25,9 @@ data class StonadDto(
   @Schema(description = "Id til den som mottar bidraget")
   val mottakerId: String,
 
+  @Schema(description = "Angir første år en stønad skal indeksreguleres")
+  val indeksreguleringAar: String?,
+
   @Schema(description = "opprettet_av")
   val opprettetAv: String,
 
