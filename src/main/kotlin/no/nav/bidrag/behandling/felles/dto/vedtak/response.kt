@@ -88,6 +88,9 @@ data class StonadsendringDto(
   @Schema(description = "Angir første år en stønad skal indeksreguleres")
   val indeksreguleringAar: String?,
 
+  @Schema(description = "Angir dato for eventuelt opphør av stønaden")
+  val opphortFra: LocalDate?,
+
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   val periodeListe: List<VedtakPeriodeDto>
 )
@@ -121,10 +124,10 @@ data class EngangsbelopDto(
   val mottakerId: String,
 
   @Schema(description =  "Beregnet engangsbeløp")
-  val belop: BigDecimal,
+  val belop: BigDecimal?,
 
   @Schema(description =  "Valutakoden tilhørende engangsbeløpet")
-  val valutakode: String,
+  val valutakode: String?,
 
   @Schema(description =  "Resultatkoden tilhørende engangsbeløpet")
   val resultatkode: String,

@@ -43,6 +43,7 @@ data class Stonadsendring(
   val kravhaverId: String,
   val mottakerId: String,
   val indeksreguleringAar: String?,
+  val opphortFra: LocalDate?,
   val periodeListe: List<Periode>
 )
 
@@ -53,8 +54,8 @@ data class Engangsbelop(
   val skyldnerId: String,
   val kravhaverId: String,
   val mottakerId: String,
-  val belop: BigDecimal,
-  val valutakode: String,
+  val belop: BigDecimal?,
+  val valutakode: String?,
   val resultatkode: String,
   val referanse: String?,
   val endrerEngangsbelopId: Int?

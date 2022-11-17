@@ -108,6 +108,9 @@ data class OpprettStonadsendringRequestDto(
   @Schema(description = "Angir første år en stønad skal indeksreguleres")
   val indeksreguleringAar: String?,
 
+  @Schema(description = "Angir dato for eventuelt opphør av stønaden")
+  val opphortFra: LocalDate?,
+
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   @field:Valid
   @field:NotEmpty(message = "Listen kan ikke være null eller tom.")
@@ -142,11 +145,11 @@ data class OpprettEngangsbelopRequestDto(
 
   @Schema(description ="Beregnet engangsbeløp")
   @Min(0)
-  val belop: BigDecimal,
+  val belop: BigDecimal?,
 
   @Schema(description ="Valutakoden tilhørende engangsbeløpet")
   @NotBlank
-  val valutakode: String,
+  val valutakode: String?,
 
   @Schema(description ="Resultatkoden tilhørende engangsbeløpet")
   @NotBlank
