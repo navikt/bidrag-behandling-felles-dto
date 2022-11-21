@@ -14,7 +14,7 @@ data class StonadDto(
   val stonadType: StonadType,
 
   @Schema(description = "Referanse til sak")
-  val sakId: String?,
+  val sakId: String,
 
   @Schema(description = "Id til den som skal betale bidraget")
   val skyldnerId: String,
@@ -27,6 +27,9 @@ data class StonadDto(
 
   @Schema(description = "Angir første år en stønad skal indeksreguleres")
   val indeksreguleringAar: String?,
+
+  @Schema(description = "Angir dato for eventuelt opphør av stønaden")
+  val opphortFra: LocalDate?,
 
   @Schema(description = "opprettet_av")
   val opprettetAv: String,

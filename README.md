@@ -61,3 +61,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.51  | Endret       | indeksreguleringAar lagt til på stønadsendringsnivå for bidrag-vedtak                              |     
 | 0.0.52  | Endret       | indeksreguleringAar lagt til på stønadnivå for bidrag-stonad                                       |     
 | 0.0.53  | Endret       | beløp og valuutakode gjort nullable på engangsbeløp, nytt felt opphortFra på stønadsendring        |     
+| 0.0.54  | Endret       | sakId gjort non-nullable                                                                           |     
