@@ -6,7 +6,7 @@ interface StonadClient {
 
   fun hentStonadFraId(stonadId: Int): StonadDto?
 
-  fun hentStonad(stonadType: String, skyldnerId: String, kravhaverId: String): StonadDto?
+  fun hentStonad(stonadType: String, skyldnerId: String, kravhaverId: String, sakId: String): StonadDto?
 
   fun endreMottakerIdOgOpprettHistorikk(request: EndreMottakerIdRequestDto): MottakerIdHistorikkDto
 
