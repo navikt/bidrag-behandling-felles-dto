@@ -3,10 +3,10 @@ package no.nav.bidrag.behandling.felles.dto.vedtak
 import no.nav.bidrag.behandling.felles.enums.EngangsbelopType
 import no.nav.bidrag.behandling.felles.enums.StonadType
 import no.nav.bidrag.behandling.felles.enums.VedtakType
+import no.nav.bidrag.commons.CorrelationId
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime
-import no.nav.bidrag.commons.CorrelationId
 
 data class VedtakHendelse(
   val vedtakType: VedtakType,
@@ -64,8 +64,8 @@ data class Engangsbelop(
 data class Periode(
   val periodeFomDato: LocalDate,
   val periodeTilDato: LocalDate?,
-  val belop: BigDecimal,
-  val valutakode: String,
+  val belop: BigDecimal?,
+  val valutakode: String?,
   val resultatkode: String,
   val referanse: String?
   )

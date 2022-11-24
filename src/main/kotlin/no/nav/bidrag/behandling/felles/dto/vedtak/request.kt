@@ -8,7 +8,6 @@ import no.nav.bidrag.behandling.felles.enums.StonadType
 import no.nav.bidrag.behandling.felles.enums.VedtakType
 import java.math.BigDecimal
 import java.time.LocalDate
-import java.time.Year
 import javax.validation.Valid
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotBlank
@@ -188,11 +187,11 @@ data class OpprettVedtakPeriodeRequestDto(
 
   @Schema(description = "Beregnet stønadsbeløp")
   @Min(0)
-  val belop: BigDecimal,
+  val belop: BigDecimal?,
 
   @Schema(description = "Valutakoden tilhørende stønadsbeløpet")
   @NotBlank
-  val valutakode: String,
+  val valutakode: String?,
 
   @Schema(description = "Resultatkoden tilhørende stønadsbeløpet")
   @NotBlank
