@@ -161,10 +161,10 @@ data class VedtakPeriodeDto(
   val periodeTilDato: LocalDate?,
 
   @Schema(description = "Beregnet stønadsbeløp")
-  val belop: BigDecimal,
+  val belop: BigDecimal?,
 
   @Schema(description = "Valutakoden tilhørende stønadsbeløpet")
-  val valutakode: String,
+  val valutakode: String?,
 
   @Schema(description = "Resultatkoden tilhørende  stønadsbeløpet")
   val resultatkode: String,
