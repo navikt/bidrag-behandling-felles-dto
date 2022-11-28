@@ -84,24 +84,12 @@ data class OpprettStonadsendringRequestDto(
   val sakId: String,
 
   @Schema(description = "Id til den som skal betale bidraget")
-  @field:Pattern(
-    regexp = "^[0-9]{9}$|^[0-9]{11}$",
-    message = "Ugyldig format. Må inneholde eksakt 9 eller 11 siffer."
-  )
   val skyldnerId: String,
 
   @Schema(description = "Id til den som krever bidraget")
-  @field:Pattern(
-    regexp = "^[0-9]{9}$|^[0-9]{11}$",
-    message = "Ugyldig format. Må inneholde eksakt 9 eller 11 siffer."
-  )
   val kravhaverId: String,
 
   @Schema(description = "Id til den som mottar bidraget")
-  @field:Pattern(
-    regexp = "^[0-9]{9}$|^[0-9]{11}$",
-    message = "Ugyldig format. Må inneholde eksakt 9 eller 11 siffer."
-  )
   val mottakerId: String,
 
   @Schema(description = "Angir første år en stønad skal indeksreguleres")
@@ -128,15 +116,12 @@ data class OpprettEngangsbelopRequestDto(
   val sakId: String,
 
   @Schema(description ="Id til den som skal betale engangsbeløpet")
-  @field:Pattern(regexp = "^[0-9]{9}$|^[0-9]{11}$", message = "Ugyldig format. Må inneholde eksakt 9 eller 11 siffer.")
   val skyldnerId: String,
 
   @Schema(description ="Id til den som krever engangsbeløpet")
-  @field:Pattern(regexp = "^[0-9]{9}$|^[0-9]{11}$", message = "Ugyldig format. Må inneholde eksakt 9 eller 11 siffer.")
   val kravhaverId: String,
 
   @Schema(description ="Id til den som mottar engangsbeløpet")
-  @field:Pattern(regexp = "^[0-9]{9}$|^[0-9]{11}$", message = "Ugyldig format. Må inneholde eksakt 9 eller 11 siffer.")
   val mottakerId: String,
 
   @Schema(description ="Beregnet engangsbeløp")

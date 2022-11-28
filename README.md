@@ -64,3 +64,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.54  | Endret       | sakId gjort non-nullable                                                                           |     
 | 0.0.55  | Endret       | belop og valutakode gjort om til nullable på periode i bidrag-vedtak                               |     
 | 0.0.56  | Endret       | Fjerner felt opphortFra fra stønadsendring                                                         |     
+| 0.0.57  | Endret       | Endrer inputkontroll på skyldner/mottaker/kravhaver, fjernet db-id i respons fra vedtak            |     

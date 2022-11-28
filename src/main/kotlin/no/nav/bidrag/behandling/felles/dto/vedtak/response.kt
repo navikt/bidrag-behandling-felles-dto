@@ -13,9 +13,6 @@ import java.time.LocalDateTime
 @Schema
 data class VedtakDto(
 
-  @Schema(description = "Vedtak-id")
-  var vedtakId: Int,
-
   @Schema(description = "Vedtak-type")
   var vedtakType: VedtakType,
 
@@ -53,9 +50,6 @@ data class VedtakDto(
 
 @Schema
 data class GrunnlagDto(
-
-  @Schema(description = "Grunnlag-id")
-  val grunnlagId: Int,
 
   @Schema(description = "Referanse til grunnlaget")
   val referanse: String,
