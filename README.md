@@ -63,4 +63,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.53  | Endret       | beløp og valuutakode gjort nullable på engangsbeløp, nytt felt opphortFra på stønadsendring        |     
 | 0.0.54  | Endret       | sakId gjort non-nullable                                                                           |     
 | 0.0.55  | Endret       | belop og valutakode gjort om til nullable på periode i bidrag-vedtak                               |     
-| 0.0.56  | Endret       | Fjerner felt opphortFra på stønadsendring                                                          |     
+| 0.0.56  | Endret       | Fjerner felt opphortFra fra stønadsendring                                                         |     
