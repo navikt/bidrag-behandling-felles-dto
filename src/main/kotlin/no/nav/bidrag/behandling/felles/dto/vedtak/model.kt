@@ -43,7 +43,6 @@ data class Stonadsendring(
   val kravhaverId: String,
   val mottakerId: String,
   val indeksreguleringAar: String?,
-  val opphortFra: LocalDate?,
   val periodeListe: List<Periode>
 )
 
