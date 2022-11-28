@@ -88,9 +88,6 @@ data class StonadsendringDto(
   @Schema(description = "Angir første år en stønad skal indeksreguleres")
   val indeksreguleringAar: String?,
 
-  @Schema(description = "Angir dato for eventuelt opphør av stønaden")
-  val opphortFra: LocalDate?,
-
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   val periodeListe: List<VedtakPeriodeDto>
 )
