@@ -26,9 +26,6 @@ data class OpprettStonadRequestDto(
   @Schema(description = "Angir første år en stønad skal indeksreguleres")
   val indeksreguleringAar: String?,
 
-  @Schema(description = "Angir dato for eventuelt opphør av stønaden")
-  val opphortFra: LocalDate?,
-
   @Schema(description = "opprettet_av")
   val opprettetAv: String,
 
@@ -53,10 +50,10 @@ data class OpprettStonadPeriodeRequestDto(
   val periodeGjortUgyldigAvVedtakId: Int?,
 
   @Schema(description = "Beregnet stønadsbeløp")
-  val belop: BigDecimal,
+  val belop: BigDecimal?,
 
   @Schema(description = "Valutakoden tilhørende stønadsbeløpet")
-  val valutakode: String,
+  val valutakode: String?,
 
   @Schema(description = "Resultatkoden tilhørende stønadsbeløpet")
   val resultatkode: String,
