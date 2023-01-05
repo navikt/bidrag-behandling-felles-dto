@@ -23,7 +23,7 @@ data class OpprettVedtakRequestDto(
   val kilde: VedtakKilde,
 
   @Schema(description = "Type vedtak")
-  var type: VedtakType,
+  val type: VedtakType,
 
   @Schema(description = "Id til saksbehandler/batchjobb evt. annet som oppretter vedtaket")
   @Size(min = 5)

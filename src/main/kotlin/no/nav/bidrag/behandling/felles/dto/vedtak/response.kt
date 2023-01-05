@@ -19,16 +19,16 @@ data class VedtakDto(
   val kilde: VedtakKilde,
 
   @Schema(description = "Type vedtak")
-  var type: VedtakType,
+  val type: VedtakType,
 
   @Schema(description = "Id til saksbehandler/batchjobb evt annet som opprettet vedtaket")
-  var opprettetAv: String,
+  val opprettetAv: String,
 
   @Schema(description = "Dato vedtaket er fattet")
   val dato: LocalDate,
 
   @Schema(description = "Id til enheten som er ansvarlig for vedtaket")
-  var enhetId: String,
+  val enhetId: String,
 
   @Schema(description = "Referanse som brukes i utlandssaker")
   val eksternReferanse: String?,
@@ -37,16 +37,16 @@ data class VedtakDto(
   val utsattTilDato: LocalDate?,
 
   @Schema(description = "Opprettet timestamp")
-  var opprettetTimestamp: LocalDateTime,
+  val opprettetTimestamp: LocalDateTime,
 
   @Schema(description = "Liste over alle grunnlag som inngår i vedtaket")
-  var grunnlagListe: List<GrunnlagDto>,
+  val grunnlagListe: List<GrunnlagDto>,
 
   @Schema(description = "Liste over alle stønadsendringer som inngår i vedtaket")
-  var stonadsendringListe: List<StonadsendringDto>,
+  val stonadsendringListe: List<StonadsendringDto>,
 
   @Schema(description = "Liste over alle engangsbeløp som inngår i vedtaket")
-  var engangsbelopListe: List<EngangsbelopDto>,
+  val engangsbelopListe: List<EngangsbelopDto>,
 
   @Schema(description = "Liste med referanser til alle behandlinger som ligger som grunnlag til vedtaket")
   val behandlingsreferanseListe: List<BehandlingsreferanseDto>

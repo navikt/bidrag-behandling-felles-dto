@@ -36,7 +36,7 @@ data class Sporingsdata(val correlationId: String) {
 
   @Suppress("unused") // brukes av jackson
   val opprettet: LocalDateTime = LocalDateTime.now()
-  var opprettetAv: String? = null
+  val opprettetAv: String? = null
 }
 
 data class Stonadsendring(
