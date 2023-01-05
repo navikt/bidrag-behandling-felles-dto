@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.JsonNode
 import io.swagger.v3.oas.annotations.media.Schema
 import no.nav.bidrag.behandling.felles.enums.EngangsbelopType
 import no.nav.bidrag.behandling.felles.enums.GrunnlagType
+import no.nav.bidrag.behandling.felles.enums.Innkreving
 import no.nav.bidrag.behandling.felles.enums.StonadType
+import no.nav.bidrag.behandling.felles.enums.VedtakKilde
 import no.nav.bidrag.behandling.felles.enums.VedtakType
 import java.math.BigDecimal
 import java.time.LocalDate
@@ -13,17 +15,20 @@ import java.time.LocalDateTime
 @Schema
 data class VedtakDto(
 
-  @Schema(description = "Vedtak-type")
-  var vedtakType: VedtakType,
+  @Schema(description = "Hva er kilden til vedtaket. Automatisk eller manuelt")
+  val kilde: VedtakKilde,
+
+  @Schema(description = "Type vedtak")
+  val type: VedtakType,
 
   @Schema(description = "Id til saksbehandler/batchjobb evt annet som opprettet vedtaket")
-  var opprettetAv: String,
+  val opprettetAv: String,
 
   @Schema(description = "Dato vedtaket er fattet")
-  val vedtakDato: LocalDate,
+  val dato: LocalDate,
 
   @Schema(description = "Id til enheten som er ansvarlig for vedtaket")
-  var enhetId: String,
+  val enhetId: String,
 
   @Schema(description = "Referanse som brukes i utlandssaker")
   val eksternReferanse: String?,
@@ -32,16 +37,16 @@ data class VedtakDto(
   val utsattTilDato: LocalDate?,
 
   @Schema(description = "Opprettet timestamp")
-  var opprettetTimestamp: LocalDateTime,
+  val opprettetTimestamp: LocalDateTime,
 
   @Schema(description = "Liste over alle grunnlag som inngår i vedtaket")
-  var grunnlagListe: List<GrunnlagDto>,
+  val grunnlagListe: List<GrunnlagDto>,
 
   @Schema(description = "Liste over alle stønadsendringer som inngår i vedtaket")
-  var stonadsendringListe: List<StonadsendringDto>,
+  val stonadsendringListe: List<StonadsendringDto>,
 
   @Schema(description = "Liste over alle engangsbeløp som inngår i vedtaket")
-  var engangsbelopListe: List<EngangsbelopDto>,
+  val engangsbelopListe: List<EngangsbelopDto>,
 
   @Schema(description = "Liste med referanser til alle behandlinger som ligger som grunnlag til vedtaket")
   val behandlingsreferanseListe: List<BehandlingsreferanseDto>
@@ -65,7 +70,7 @@ data class GrunnlagDto(
 data class StonadsendringDto(
 
   @Schema(description = "Stønadstype")
-  val stonadType: StonadType,
+  val type: StonadType,
 
   @Schema(description = "Referanse til sak")
   val sakId: String,
@@ -82,6 +87,9 @@ data class StonadsendringDto(
   @Schema(description = "Angir første år en stønad skal indeksreguleres")
   val indeksreguleringAar: String?,
 
+  @Schema(description = "Angir om stønaden skal innkreves")
+  val innkreving: Innkreving,
+
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   val periodeListe: List<VedtakPeriodeDto>
 )
@@ -91,13 +99,13 @@ data class StonadsendringDto(
 data class EngangsbelopDto(
 
   @Schema(description ="Vil inneholde opprinnelig engangsbeløpId, også der det har vært korrigeringer")
-  val engangsbelopId: Int,
+  val id: Int,
 
   @Schema(description = "Løpenr innenfor vedtak")
   val lopenr: Int,
 
   @Schema(description =  "Id for eventuelt engangsbeløp som skal endres, skal være id for opprinnelig engangsbeløp")
-  val endrerEngangsbelopId: Int?,
+  val endrerId: Int?,
 
   @Schema(description =  "Type Engangsbeløp. Saertilskudd, gebyr m.m.")
   val type: EngangsbelopType,
@@ -126,6 +134,9 @@ data class EngangsbelopDto(
   @Schema(description = "Referanse - beslutningslinjeId -> bidrag-regnskap")
   val referanse: String?,
 
+  @Schema(description = "Angir om engangsbeløpet skal innkreves")
+  val innkreving: Innkreving,
+
   @Schema(description =  "Liste over alle grunnlag som inngår i beregningen")
   val grunnlagReferanseListe: List<String>
 )
@@ -146,10 +157,10 @@ data class BehandlingsreferanseDto(
 data class VedtakPeriodeDto(
 
   @Schema(description = "Periode fra-og-med-dato")
-  val periodeFomDato: LocalDate,
+  val fomDato: LocalDate,
 
   @Schema(description = "Periode til-dato")
-  val periodeTilDato: LocalDate?,
+  val tilDato: LocalDate?,
 
   @Schema(description = "Beregnet stønadsbeløp")
   val belop: BigDecimal?,

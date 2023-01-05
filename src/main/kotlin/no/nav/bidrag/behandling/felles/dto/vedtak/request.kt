@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.JsonNode
 import io.swagger.v3.oas.annotations.media.Schema
 import no.nav.bidrag.behandling.felles.enums.EngangsbelopType
 import no.nav.bidrag.behandling.felles.enums.GrunnlagType
+import no.nav.bidrag.behandling.felles.enums.Innkreving
 import no.nav.bidrag.behandling.felles.enums.StonadType
+import no.nav.bidrag.behandling.felles.enums.VedtakKilde
 import no.nav.bidrag.behandling.felles.enums.VedtakType
 import java.math.BigDecimal
 import java.time.LocalDate
@@ -12,21 +14,23 @@ import javax.validation.Valid
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotEmpty
-import javax.validation.constraints.Pattern
 import javax.validation.constraints.Size
 
 @Schema
 data class OpprettVedtakRequestDto(
 
-  @Schema(description = "Hva slags type vedtak som er fattet")
-  val vedtakType: VedtakType,
+  @Schema(description = "Hva er kilden til vedtaket. Automatisk eller manuelt")
+  val kilde: VedtakKilde,
+
+  @Schema(description = "Type vedtak")
+  val type: VedtakType,
 
   @Schema(description = "Id til saksbehandler/batchjobb evt. annet som oppretter vedtaket")
   @Size(min = 5)
   val opprettetAv: String,
 
   @Schema(description = "Dato vedtaket er fattet")
-  val vedtakDato: LocalDate,
+  val dato: LocalDate,
 
   @Schema(description = "Id til enheten som er ansvarlig for vedtaket")
   @NotBlank
@@ -78,7 +82,7 @@ data class OpprettStonadsendringRequestDto(
 
   @Schema(description = "Stønadstype")
   @NotBlank
-  val stonadType: StonadType,
+  val type: StonadType,
 
   @Schema(description = "Referanse til sak")
   val sakId: String,
@@ -95,6 +99,9 @@ data class OpprettStonadsendringRequestDto(
   @Schema(description = "Angir første år en stønad skal indeksreguleres")
   val indeksreguleringAar: String?,
 
+  @Schema(description = "Angir om stønaden skal innkreves")
+  val innkreving: Innkreving,
+
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   @field:Valid
   @field:NotEmpty(message = "Listen kan ikke være null eller tom.")
@@ -106,7 +113,7 @@ data class OpprettStonadsendringRequestDto(
 data class OpprettEngangsbelopRequestDto(
 
   @Schema(description ="Id for eventuelt engangsbeløp som skal endres, skal være id for opprinnelig engangsbeløp")
-  val endrerEngangsbelopId: Int?,
+  val endrerId: Int?,
 
   @Schema(description ="Beløpstype. Saertilskudd, gebyr m.m.")
   @NotBlank
@@ -139,6 +146,9 @@ data class OpprettEngangsbelopRequestDto(
   @Schema(description = "Referanse - beslutningslinjeId -> bidrag-regnskap")
   val referanse: String?,
 
+  @Schema(description = "Angir om engangsbeløpet skal innkreves")
+  val innkreving: Innkreving,
+
   @Schema(description ="Liste over alle grunnlag som inngår i engangsbeløpet")
   @NotEmpty
   val grunnlagReferanseListe: List<String>
@@ -162,10 +172,10 @@ data class OpprettBehandlingsreferanseRequestDto(
 data class OpprettVedtakPeriodeRequestDto(
 
   @Schema(description = "Periode fra-og-med-dato")
-  val periodeFomDato: LocalDate,
+  val fomDato: LocalDate,
 
   @Schema(description = "Periode til-dato")
-  val periodeTilDato: LocalDate?,
+  val tilDato: LocalDate?,
 
   @Schema(description = "Beregnet stønadsbeløp")
   @Min(0)
