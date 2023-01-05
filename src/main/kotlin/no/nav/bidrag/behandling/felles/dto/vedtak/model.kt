@@ -1,7 +1,9 @@
 package no.nav.bidrag.behandling.felles.dto.vedtak
 
 import no.nav.bidrag.behandling.felles.enums.EngangsbelopType
+import no.nav.bidrag.behandling.felles.enums.Innkreving
 import no.nav.bidrag.behandling.felles.enums.StonadType
+import no.nav.bidrag.behandling.felles.enums.VedtakKilde
 import no.nav.bidrag.behandling.felles.enums.VedtakType
 import no.nav.bidrag.commons.CorrelationId
 import java.math.BigDecimal
@@ -9,9 +11,10 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 
 data class VedtakHendelse(
-  val vedtakType: VedtakType,
-  val vedtakId: Int,
-  val vedtakDato: LocalDate,
+  val kilde: VedtakKilde,
+  val type: VedtakType,
+  val id: Int,
+  val dato: LocalDate,
   val enhetId: String,
   val eksternReferanse: String?,
   val utsattTilDato: LocalDate?,
@@ -23,7 +26,7 @@ data class VedtakHendelse(
 {
   val sporing: Sporingsdata = Sporingsdata(
     CorrelationId.fetchCorrelationIdForThread()
-      ?: CorrelationId.generateTimestamped(vedtakType.toString())
+      ?: CorrelationId.generateTimestamped(type.toString())
         .get()
   )
 }
@@ -37,17 +40,18 @@ data class Sporingsdata(val correlationId: String) {
 }
 
 data class Stonadsendring(
-  val stonadType: StonadType,
+  val type: StonadType,
   val sakId: String,
   val skyldnerId: String,
   val kravhaverId: String,
   val mottakerId: String,
   val indeksreguleringAar: String?,
+  val innkreving: Innkreving,
   val periodeListe: List<Periode>
 )
 
 data class Engangsbelop(
-  val engangsbelopId: Int,
+  val id: Int,
   val type: EngangsbelopType,
   val sakId: String,
   val skyldnerId: String,
@@ -57,12 +61,13 @@ data class Engangsbelop(
   val valutakode: String?,
   val resultatkode: String,
   val referanse: String?,
-  val endrerEngangsbelopId: Int?
+  val innkreving: Innkreving,
+  val endrerId: Int?
 )
 
 data class Periode(
-  val periodeFomDato: LocalDate,
-  val periodeTilDato: LocalDate?,
+  val fomDato: LocalDate,
+  val tilDato: LocalDate?,
   val belop: BigDecimal?,
   val valutakode: String?,
   val resultatkode: String,
