@@ -1,6 +1,7 @@
 package no.nav.bidrag.behandling.felles.dto.stonad
 
 import io.swagger.v3.oas.annotations.media.Schema
+import no.nav.bidrag.behandling.felles.enums.Innkreving
 import no.nav.bidrag.behandling.felles.enums.StonadType
 import java.math.BigDecimal
 import java.time.LocalDate
@@ -11,7 +12,7 @@ data class StonadDto(
   val stonadId: Int,
 
   @Schema(description = "Stønadstype")
-  val stonadType: StonadType,
+  val type: StonadType,
 
   @Schema(description = "Referanse til sak")
   val sakId: String,
@@ -27,6 +28,9 @@ data class StonadDto(
 
   @Schema(description = "Angir første år en stønad skal indeksreguleres")
   val indeksreguleringAar: String?,
+
+  @Schema(description = "Angir om stønaden skal innkreves")
+  val innkreving: Innkreving,
 
   @Schema(description = "opprettet_av")
   val opprettetAv: String,

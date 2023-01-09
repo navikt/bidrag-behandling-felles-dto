@@ -67,3 +67,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.57  | Endret       | Endrer inputkontroll på skyldner/mottaker/kravhaver, fjernet db-id i respons fra vedtak                   |     
 | 0.0.58  | Endret       | OpphortFra fjernet fra bidrag-stonad, beløp og valuutakode gort nullable                                  |     
 | 0.0.59  | Endret       | Bidrag-vedtak: Kilde lagt til på vedtak, innkreving på stonadsendring og engangsbelop + noe refaktorering |     
+| 0.0.60  | Endret       | Bidrag-stonad: innkreving lagt til på stønad + noe refaktorering                                          |     
