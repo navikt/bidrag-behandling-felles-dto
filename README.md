@@ -69,3 +69,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.59  | Endret       | Bidrag-vedtak: Kilde lagt til på vedtak, innkreving på stonadsendring og engangsbelop + noe refaktorering |     
 | 0.0.60  | Endret       | Bidrag-stonad: innkreving lagt til på stønad + noe refaktorering                                          |     
 | 0.0.61  | Endret       | Bidrag-vedtak: Endret til type BehandlingsrefKilde på tabell behandlingsreferanse                         |     
+| 0.0.62  | Endret       | Bidrag-vedtak: Endret til type BehandlingsrefKilde på objekter for behandlingsreferanse                   |     

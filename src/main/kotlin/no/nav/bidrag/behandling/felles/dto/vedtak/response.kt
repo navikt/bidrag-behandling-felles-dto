@@ -2,6 +2,7 @@ package no.nav.bidrag.behandling.felles.dto.vedtak
 
 import com.fasterxml.jackson.databind.JsonNode
 import io.swagger.v3.oas.annotations.media.Schema
+import no.nav.bidrag.behandling.felles.enums.BehandlingsrefKilde
 import no.nav.bidrag.behandling.felles.enums.EngangsbelopType
 import no.nav.bidrag.behandling.felles.enums.GrunnlagType
 import no.nav.bidrag.behandling.felles.enums.Innkreving
@@ -145,8 +146,8 @@ data class EngangsbelopDto(
 @Schema
 data class BehandlingsreferanseDto(
 
-  @Schema(description ="Kildesystem for behandlingen før vedtaket")
-  val kilde: String,
+  @Schema(description ="Kilde/type for en behandlingsreferanse")
+  val kilde: BehandlingsrefKilde,
 
   @Schema(description = "Kildesystemets referanse til behandlingen")
   val referanse: String
