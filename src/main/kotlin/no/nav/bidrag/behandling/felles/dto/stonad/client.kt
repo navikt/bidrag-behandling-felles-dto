@@ -8,8 +8,6 @@ interface StonadClient {
 
   fun hentStonad(stonadType: String, skyldnerId: String, kravhaverId: String, sakId: String): StonadDto?
 
-  fun endreMottakerIdOgOpprettHistorikk(request: EndreMottakerIdRequestDto): MottakerIdHistorikkDto
-
   fun finnAlleEndringerMottakerIdForStonad(stonadId: Int): StonadDto
 
 }
