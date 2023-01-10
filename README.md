@@ -60,7 +60,7 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.50  | Endret       | endrerEngangsbelopId lagt til på Engangsbelop -> Kafka-topic.                                             |     
 | 0.0.51  | Endret       | indeksreguleringAar lagt til på stønadsendringsnivå for bidrag-vedtak                                     |     
 | 0.0.52  | Endret       | indeksreguleringAar lagt til på stønadnivå for bidrag-stonad                                              |     
-| 0.0.53  | Endret       | beløp og valuutakode gjort nullable på engangsbeløp, nytt felt opphortFra på stønadsendring               |     
+| 0.0.53  | Endret       | beløp og valutakode gjort nullable på engangsbeløp, nytt felt opphortFra på stønadsendring                |     
 | 0.0.54  | Endret       | sakId gjort non-nullable                                                                                  |     
 | 0.0.55  | Endret       | belop og valutakode gjort om til nullable på periode i bidrag-vedtak                                      |     
 | 0.0.56  | Endret       | Fjerner felt opphortFra fra stønadsendring                                                                |     
@@ -68,3 +68,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.58  | Endret       | OpphortFra fjernet fra bidrag-stonad, beløp og valuutakode gort nullable                                  |     
 | 0.0.59  | Endret       | Bidrag-vedtak: Kilde lagt til på vedtak, innkreving på stonadsendring og engangsbelop + noe refaktorering |     
 | 0.0.60  | Endret       | Bidrag-stonad: innkreving lagt til på stønad + noe refaktorering                                          |     
+| 0.0.61  | Endret       | Bidrag-vedtak: Endret til type BehandlingsrefKilde på tabell behandlingsreferanse                         |     
