@@ -32,7 +32,7 @@ data class OpprettVedtakRequestDto(
   val opprettetAv: String,
 
   @Schema(description = "Tidspunkt/timestamp når vedtaket er fattet")
-  val tidspunkt: LocalDateTime,
+  val vedtakTidspunkt: LocalDateTime,
 
   @Schema(description = "Id til enheten som er ansvarlig for vedtaket")
   @NotBlank
