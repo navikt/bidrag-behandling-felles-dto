@@ -11,6 +11,7 @@ import no.nav.bidrag.behandling.felles.enums.VedtakKilde
 import no.nav.bidrag.behandling.felles.enums.VedtakType
 import java.math.BigDecimal
 import java.time.LocalDate
+import java.time.LocalDateTime
 import javax.validation.Valid
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotBlank
@@ -30,8 +31,8 @@ data class OpprettVedtakRequestDto(
   @Size(min = 5)
   val opprettetAv: String,
 
-  @Schema(description = "Dato vedtaket er fattet")
-  val dato: LocalDate,
+  @Schema(description = "Tidspunkt/timestamp når vedtaket er fattet")
+  val tidspunkt: LocalDateTime,
 
   @Schema(description = "Id til enheten som er ansvarlig for vedtaket")
   @NotBlank

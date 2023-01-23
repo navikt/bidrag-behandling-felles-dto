@@ -25,8 +25,8 @@ data class VedtakDto(
   @Schema(description = "Id til saksbehandler/batchjobb evt annet som opprettet vedtaket")
   val opprettetAv: String,
 
-  @Schema(description = "Dato vedtaket er fattet")
-  val dato: LocalDate,
+  @Schema(description = "Tidspunkt/timestamp når vedtaket er fattet")
+  val tidspunkt: LocalDateTime,
 
   @Schema(description = "Id til enheten som er ansvarlig for vedtaket")
   val enhetId: String,

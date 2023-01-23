@@ -71,3 +71,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.61  | Endret       | Bidrag-vedtak: Endret til type BehandlingsrefKilde på tabell behandlingsreferanse                         |     
 | 0.0.62  | Endret       | Bidrag-vedtak: Endret til type BehandlingsrefKilde på objekter for behandlingsreferanse                   |     
 | 0.0.63  | Endret       | Bidrag-stonad: Nytt request-objekt for å hente stønader                                                   |     
+| 0.0.64  | Endret       | Bidrag-vedtak: Dato erstattet med tidspunkt                                                               |     
