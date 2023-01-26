@@ -37,8 +37,8 @@ data class VedtakDto(
   @Schema(description = "Settes hvis overføring til Elin skal utsettes")
   val utsattTilDato: LocalDate?,
 
-  @Schema(description = "Opprettet timestamp")
-  val opprettetTimestamp: LocalDateTime,
+  @Schema(description = "Tidspunkt vedtaket er fattet")
+  val opprettetTidspunkt: LocalDateTime,
 
   @Schema(description = "Liste over alle grunnlag som inngår i vedtaket")
   val grunnlagListe: List<GrunnlagDto>,

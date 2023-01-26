@@ -35,14 +35,14 @@ data class StonadDto(
   @Schema(description = "opprettet_av")
   val opprettetAv: String,
 
-  @Schema(description = "opprettet_timestamp")
-  val opprettetTimestamp: LocalDateTime,
+  @Schema(description = "opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime,
 
-  @Schema(description = "endret_av")
+  @Schema(description = "endret av")
   val endretAv: String?,
 
-  @Schema(description = "når_sist_endret_timestamp")
-  val endretTimestamp: LocalDateTime?,
+  @Schema(description = "når sist endret tidspunkt")
+  val endretTidspunkt: LocalDateTime?,
 
   @Schema(description = "Liste over alle perioder som inngår i stønaden")
   val periodeListe: List<StonadPeriodeDto>
@@ -108,6 +108,6 @@ data class MottakerIdHistorikkDto(
   @Schema(description = "Saksbehandler/batchjobb/annet som har oppdatert mottaker-id")
   val opprettetAv: String,
 
-  @Schema(description = "Opprettet timestamp")
-  val opprettetTimestamp: LocalDateTime
+  @Schema(description = "Opprettet tidspunkt")
+  val opprettetTidspunkt: LocalDateTime
 )
