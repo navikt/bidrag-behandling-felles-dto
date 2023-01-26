@@ -5,6 +5,7 @@ import no.nav.bidrag.behandling.felles.enums.Innkreving
 import no.nav.bidrag.behandling.felles.enums.StonadType
 import java.math.BigDecimal
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 @Schema(description ="Egenskaper ved en stønadsendring")
 data class OpprettStonadRequestDto(
@@ -49,6 +50,12 @@ data class OpprettStonadPeriodeRequestDto(
 
   @Schema(description = "Vedtak-id")
   val vedtakId: Int,
+
+  @Schema(description = "Perioden er gyldig fra angitt tidspunkt (vedtakstidspunkt)")
+  val gyldigFra: LocalDateTime,
+
+  @Schema(description = "Angir tidspunkt perioden eventuelt er ugyldig fra (tidspunkt for vedtak med periode som erstattet denne)")
+  val gyldigTil: LocalDateTime?,
 
   @Schema(description = "Periode gjort ugyldig av vedtak-id")
   val periodeGjortUgyldigAvVedtakId: Int?,
