@@ -74,3 +74,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.64  | Endret       | Ny versjon av bidrag-behandling-felles                                                                    |     
 | 0.0.65  | Endret       | Bidrag-vedtak: Dato erstattet med vedtakTidspunkt                                                         |
 | 0.0.66  | Endret       | Bidrag-stonad: GyldigFra og GyldigTil lagt til på periode                                                 |
+| 0.0.67  | Endret       | Bidrag-vedtak-og-stonad: Timestamp -> tidspunkt                                                           |
