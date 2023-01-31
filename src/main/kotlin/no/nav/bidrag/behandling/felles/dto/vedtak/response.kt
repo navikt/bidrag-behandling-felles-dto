@@ -91,6 +91,9 @@ data class StonadsendringDto(
   @Schema(description = "Angir om stønaden skal innkreves")
   val innkreving: Innkreving,
 
+  @Schema(description = "Angir om en stønad skal endres som følge av vedtaket")
+  val endring: Boolean,
+
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   val periodeListe: List<VedtakPeriodeDto>
 )
@@ -137,6 +140,9 @@ data class EngangsbelopDto(
 
   @Schema(description = "Angir om engangsbeløpet skal innkreves")
   val innkreving: Innkreving,
+
+  @Schema(description = "Angir om et engangsbeløp skal endres som følge av vedtaket")
+  val endring: Boolean,
 
   @Schema(description =  "Liste over alle grunnlag som inngår i beregningen")
   val grunnlagReferanseListe: List<String>

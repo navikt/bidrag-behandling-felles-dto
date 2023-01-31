@@ -104,6 +104,9 @@ data class OpprettStonadsendringRequestDto(
   @Schema(description = "Angir om stønaden skal innkreves")
   val innkreving: Innkreving,
 
+  @Schema(description = "Angir om en stønad skal endres som følge av vedtaket")
+  val endring: Boolean,
+
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   @field:Valid
   @field:NotEmpty(message = "Listen kan ikke være null eller tom.")
@@ -150,6 +153,9 @@ data class OpprettEngangsbelopRequestDto(
 
   @Schema(description = "Angir om engangsbeløpet skal innkreves")
   val innkreving: Innkreving,
+
+  @Schema(description = "Angir om et engangsbeløp skal endres som følge av vedtaket")
+  val endring: Boolean,
 
   @Schema(description ="Liste over alle grunnlag som inngår i engangsbeløpet")
   @NotEmpty

@@ -40,6 +40,7 @@ data class Stonadsendring(
   val mottakerId: String,
   val indeksreguleringAar: String?,
   val innkreving: Innkreving,
+  val endring: Boolean,
   val periodeListe: List<Periode>
 )
 
@@ -55,6 +56,7 @@ data class Engangsbelop(
   val resultatkode: String,
   val referanse: String?,
   val innkreving: Innkreving,
+  val endring: Boolean,
   val endrerId: Int?
 )
 
