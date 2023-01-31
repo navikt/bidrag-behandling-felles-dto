@@ -25,8 +25,8 @@ data class VedtakHendelse(
 )
 {
   val sporing: Sporingsdata = Sporingsdata(
-    CorrelationId.fetchCorrelationIdForThread()
-      ?: CorrelationId.generateTimestamped(type.toString())
+    CorrelationId.Companion.fetchCorrelationIdForThread()
+      ?: CorrelationId.Companion.generateTimestamped(type.toString())
         .get()
   )
 }
