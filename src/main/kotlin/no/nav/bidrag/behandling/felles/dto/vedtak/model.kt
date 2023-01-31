@@ -5,7 +5,6 @@ import no.nav.bidrag.behandling.felles.enums.Innkreving
 import no.nav.bidrag.behandling.felles.enums.StonadType
 import no.nav.bidrag.behandling.felles.enums.VedtakKilde
 import no.nav.bidrag.behandling.felles.enums.VedtakType
-import no.nav.bidrag.commons.CorrelationId
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -21,15 +20,9 @@ data class VedtakHendelse(
   val opprettetAv: String,
   val opprettetTidspunkt: LocalDateTime,
   val stonadsendringListe: List<Stonadsendring>?,
-  val engangsbelopListe: List<Engangsbelop>?
+  val engangsbelopListe: List<Engangsbelop>?,
+  val sporingsdata: Sporingsdata
 )
-{
-  val sporing: Sporingsdata = Sporingsdata(
-    CorrelationId.Companion.fetchCorrelationIdForThread()
-      ?: CorrelationId.Companion.generateTimestamped(type.toString())
-        .get()
-  )
-}
 
 data class Sporingsdata(val correlationId: String) {
   var brukerident: String? = null
