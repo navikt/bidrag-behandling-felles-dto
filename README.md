@@ -75,3 +75,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.65  | Endret       | Bidrag-vedtak: Dato erstattet med vedtakTidspunkt                                                         |
 | 0.0.66  | Endret       | Bidrag-stonad: GyldigFra og GyldigTil lagt til på periode                                                 |
 | 0.0.67  | Endret       | Bidrag-vedtak-og-stonad: Timestamp -> tidspunkt                                                           |
+| 0.0.68  | Endret       | Oppdatert versjon av bidrag-commons + tilpasninger CorrelationId                                          |
