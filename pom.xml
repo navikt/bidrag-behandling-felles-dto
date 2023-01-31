@@ -29,7 +29,6 @@
     <kotlin.version>1.8.0</kotlin.version>
     <springdoc-openapi-ui.version>1.6.11</springdoc-openapi-ui.version>
     <bidrag-behandling-felles.version>0.0.71</bidrag-behandling-felles.version>
-    <bidrag-commons.version>0.7.40</bidrag-commons.version>
 
     <!-- build -->
     <build-helper-maven.version>3.2.0</build-helper-maven.version>
@@ -72,11 +71,6 @@
       <groupId>no.nav.bidrag</groupId>
       <artifactId>bidrag-behandling-felles</artifactId>
       <version>${bidrag-behandling-felles.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>no.nav.bidrag</groupId>
-      <artifactId>bidrag-commons</artifactId>
-      <version>${bidrag-commons.version}</version>
     </dependency>
   </dependencies>
 
