@@ -77,3 +77,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.67  | Endret       | Bidrag-vedtak-og-stonad: Timestamp -> tidspunkt                                                           |
 | 0.0.68  | Endret       | Oppdatert versjon av bidrag-commons + tilpasninger CorrelationId                                          |
 | 0.0.69  | Endret       | Fjernet behov for bidrag-commons, fjernet fra pom                                                         |
+| 0.0.70  | Endret       | Ny boolean endring                                                                                        |
