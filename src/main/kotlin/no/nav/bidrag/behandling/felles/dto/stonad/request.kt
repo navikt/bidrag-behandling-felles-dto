@@ -67,7 +67,7 @@ data class OpprettStonadPeriodeRequestDto(
   val valutakode: String?,
 
   @Schema(description = "Resultatkoden tilhørende stønadsbeløpet")
-  val resultatkode: String,
+  val resultatkode: String
 
   )
 
@@ -84,5 +84,23 @@ data class HentStonadRequest(
   val skyldnerId: String,
 
   @Schema(description = "Id til den som krever stønadem")
-  val kravhaverId: String,
+  val kravhaverId: String
+)
+
+@Schema(description ="Request for å hente stønad og perioder som var gyldige på angitt tidspunkt")
+data class HentStonadHistoriskRequest(
+    @Schema(description = "Stønadstype")
+    val type: StonadType,
+
+    @Schema(description = "Referanse til sak")
+    val sakId: String,
+
+    @Schema(description = "Id til den som skal betale stønadem")
+    val skyldnerId: String,
+
+    @Schema(description = "Id til den som krever stønadem")
+    val kravhaverId: String,
+
+    @Schema(description = "Tidspunkt som det ønskes å hente gyldige perioder for")
+    val gyldigTidspunkt: LocalDateTime
 )
