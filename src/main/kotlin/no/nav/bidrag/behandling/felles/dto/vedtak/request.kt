@@ -38,9 +38,6 @@ data class OpprettVedtakRequestDto(
   @NotBlank
   val enhetId: String,
 
-  @Schema(description = "Referanse som brukes i utlandssaker")
-  val eksternReferanse: String?,
-
   @Schema(description = "Settes hvis overføring til Elin skal utsettes")
   val utsattTilDato: LocalDate?,
 
@@ -107,6 +104,12 @@ data class OpprettStonadsendringRequestDto(
   @Schema(description = "Angir om en stønad skal endres som følge av vedtaket")
   val endring: Boolean,
 
+  @Schema(description = "VedtakId for vedtaket det er klaget på")
+  val omgjorVedtakId: String?,
+
+  @Schema(description = "Referanse som brukes i utlandssaker")
+  val eksternReferanse: String?,
+
   @Schema(description = "Liste over alle perioder som inngår i stønadsendringen")
   @field:Valid
   @field:NotEmpty(message = "Listen kan ikke være null eller tom.")
@@ -116,9 +119,6 @@ data class OpprettStonadsendringRequestDto(
 
 @Schema
 data class OpprettEngangsbelopRequestDto(
-
-  @Schema(description ="Id for eventuelt engangsbeløp som skal endres, skal være id for opprinnelig engangsbeløp")
-  val endrerId: Int?,
 
   @Schema(description ="Beløpstype. Saertilskudd, gebyr m.m.")
   @NotBlank
@@ -148,14 +148,23 @@ data class OpprettEngangsbelopRequestDto(
   @NotBlank
   val resultatkode: String,
 
-  @Schema(description = "Referanse - beslutningslinjeId -> bidrag-regnskap")
-  val referanse: String?,
-
   @Schema(description = "Angir om engangsbeløpet skal innkreves")
   val innkreving: Innkreving,
 
   @Schema(description = "Angir om et engangsbeløp skal endres som følge av vedtaket")
   val endring: Boolean,
+
+  @Schema(description = "VedtakId for vedtaket det er klaget på. Utgjør sammen med referanse en unik id for et engangsbeløp")
+  val omgjorVedtakId: String?,
+
+  @Schema(description = "Referanse, brukes for å kunne omgjøre engangsbeløp senere i et klagevedtak. Unik innenfor et vedtak")
+  val referanse: String?,
+
+  @Schema(description = "Referanse - delytelsesId/beslutningslinjeId -> bidrag-regnskap. Skal fjernes senere")
+  val delytelseId: String?,
+
+  @Schema(description = "Referanse som brukes i utlandssaker")
+  val eksternReferanse: String?,
 
   @Schema(description ="Liste over alle grunnlag som inngår i engangsbeløpet")
   @NotEmpty
@@ -197,8 +206,8 @@ data class OpprettVedtakPeriodeRequestDto(
   @NotBlank
   val resultatkode: String,
 
-  @Schema(description = "Referanse - beslutningslinjeId -> bidrag-regnskap")
-  val referanse: String?,
+  @Schema(description = "Referanse - delytelsesId/beslutningslinjeId -> bidrag-regnskap. Skal fjernes senere")
+  val delytelseId: String?,
 
   @Schema(description = "Liste over alle grunnlag som inngår i perioden")
   @NotEmpty

@@ -15,7 +15,6 @@ data class VedtakHendelse(
   val id: Int,
   val vedtakTidspunkt: LocalDateTime,
   val enhetId: String,
-  val eksternReferanse: String?,
   val utsattTilDato: LocalDate?,
   val opprettetAv: String,
   val opprettetTidspunkt: LocalDateTime,
@@ -41,11 +40,12 @@ data class Stonadsendring(
   val indeksreguleringAar: String?,
   val innkreving: Innkreving,
   val endring: Boolean,
+  val omgjorVedtakId: String?,
+  val eksternReferanse: String?,
   val periodeListe: List<Periode>
 )
 
 data class Engangsbelop(
-  val id: Int,
   val type: EngangsbelopType,
   val sakId: String,
   val skyldnerId: String,
@@ -54,10 +54,12 @@ data class Engangsbelop(
   val belop: BigDecimal?,
   val valutakode: String?,
   val resultatkode: String,
-  val referanse: String?,
   val innkreving: Innkreving,
   val endring: Boolean,
-  val endrerId: Int?
+  val omgjorVedtakId: String?,
+  val referanse: String?,
+  val delytelseId: String?,
+  val eksternReferanse: String?,
 )
 
 data class Periode(
@@ -66,5 +68,5 @@ data class Periode(
   val belop: BigDecimal?,
   val valutakode: String?,
   val resultatkode: String,
-  val referanse: String?
+  val delytelseId: String?,
   )
