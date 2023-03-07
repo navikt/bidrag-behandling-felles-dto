@@ -79,3 +79,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.69  | Endret       | Fjernet behov for bidrag-commons, fjernet fra pom                                                         |
 | 0.0.70  | Endret       | Ny boolean endring                                                                                        |
 | 0.0.71  | Endret       | Lagt til ny request for å hente stønad og gyldige perioder for angitt tidspunkt                           |
+| 0.0.72  | Endret       | Tilpasninger mot vedtal, omgjorVedtakId og referanse. Fjerner endrerEngangsbelopId                        |
