@@ -92,7 +92,7 @@ data class StonadsendringDto(
   val endring: Boolean,
 
   @Schema(description = "VedtakId for vedtaket det er klaget på")
-  val omgjorVedtakId: String?,
+  val omgjorVedtakId: Int?,
 
   @Schema(description = "Referanse som brukes i utlandssaker")
   val eksternReferanse: String?,
@@ -136,7 +136,7 @@ data class EngangsbelopDto(
   val endring: Boolean,
 
   @Schema(description = "VedtakId for vedtaket det er klaget på. Utgjør sammen med referanse en unik id for et engangsbeløp")
-  val omgjorVedtakId: String?,
+  val omgjorVedtakId: Int?,
 
   @Schema(description = "Referanse, brukes for å kunne omgjøre engangsbeløp senere i et klagevedtak. Unik innenfor et vedtak")
   val referanse: String?,
