@@ -40,7 +40,7 @@ data class Stonadsendring(
   val indeksreguleringAar: String?,
   val innkreving: Innkreving,
   val endring: Boolean,
-  val omgjorVedtakId: String?,
+  val omgjorVedtakId: Int?,
   val eksternReferanse: String?,
   val periodeListe: List<Periode>
 )
@@ -56,10 +56,10 @@ data class Engangsbelop(
   val resultatkode: String,
   val innkreving: Innkreving,
   val endring: Boolean,
-  val omgjorVedtakId: String?,
+  val omgjorVedtakId: Int?,
   val referanse: String?,
   val delytelseId: String?,
-  val eksternReferanse: String?,
+  val eksternReferanse: String?
 )
 
 data class Periode(
@@ -68,5 +68,5 @@ data class Periode(
   val belop: BigDecimal?,
   val valutakode: String?,
   val resultatkode: String,
-  val delytelseId: String?,
+  val delytelseId: String?
   )
