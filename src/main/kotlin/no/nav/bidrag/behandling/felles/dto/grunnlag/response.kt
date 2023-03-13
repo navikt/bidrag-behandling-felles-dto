@@ -59,8 +59,8 @@ data class HentGrunnlagspakkeDto(
   @Schema(description = "Periodisert liste over innhentet kontantstøtte")
   val kontantstotteListe: List<KontantstotteDto>,
 
-  @Schema(description = "Liste over en persons barn og hvilke perioder de eventuelt deler husstand med personen grunnlaget er hentet inn for")
-  val egneBarnListe: List<EgneBarnDto>,
+  @Schema(description = "Liste over hvilke perioder BMs barn har delt bosted med BM. Barn som ikke er med i listen har ikke bodd sammen med BM")
+  val egneBarnIHusstandenListe: List<EgneBarnIHusstandenDto>,
 
   @Schema(description = "Periodisert liste over innhentede husstander for en person og dens voksne husstandsmedlemmer")
   val husstandListe: List<HusstandDto>,
@@ -281,33 +281,18 @@ data class KontantstotteDto(
 )
 
 // PDL-data
-data class EgneBarnDto(
-  @Schema(description = "Id til forelderen. Kan være null ved manuelle registreringer")
+data class EgneBarnIHusstandenDto(
+  @Schema(description = "Id til forelderen")
   val personIdForelder: String?,
 
   @Schema(description = "Identen til barnet")
   var personIdBarn: String?,
 
-  @Schema(description = "Navn på barnet, format <Fornavn, mellomnavn, Etternavn")
-  var navn: String?,
-
-  @Schema(description = "Barnets fødselsdato")
-  var foedselsdato: LocalDate?,
-
-  @Schema(description = "Barnets fødselsår")
-  var foedselsaar: Int?,
-
-  @Schema(description = "Barnets eventuelle dødsdato")
-  var doedsdato: LocalDate?,
-
-  @Schema(description = "Manuelt opprettet av")
-  val opprettetAv: String?,
-
   @Schema(description = "Hentet tidspunkt")
   val hentetTidspunkt: LocalDateTime,
 
-  @Schema(description = "Perioder barnet bor i samme husstand som aktuell forelder")
-  val borISammeHusstandDtoListe: List<BorISammeHusstandDto>?
+  @Schema(description = "Perioder barnet bor i samme husstand som BM")
+  val borISammeHusstandDtoListe: List<BorISammeHusstandDto>
 )
 
 data class BorISammeHusstandDto(
@@ -315,14 +300,9 @@ data class BorISammeHusstandDto(
   val periodeFra: LocalDate?,
 
   @Schema(description = "Barnet bor i husstanden til- og med måned")
-  val periodeTil: LocalDate?,
-
-  @Schema(description = "Manuelt opprettet av")
-  val opprettetAv: String?,
-
-  @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime,
+  val periodeTil: LocalDate?
 )
+
 
 data class HusstandDto(
   @Schema(description = "Id til personen husstandsinformasjonen er rapportert for")
@@ -388,14 +368,9 @@ data class HusstandsmedlemDto(
   var foedselsdato: LocalDate?,
 
   @Schema(description = "Husstandsmedlemmets eventuelle dødsdato")
-  var doedsdato: LocalDate?,
-
-  @Schema(description = "Manuelt opprettet av")
-  val opprettetAv: String?,
-
-  @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime,
+  var doedsdato: LocalDate?
 )
+
 
 data class SivilstandDto(
   @Schema(description = "Id til personen sivilstanden er rapportert for")
@@ -410,11 +385,8 @@ data class SivilstandDto(
   @Schema(description = "Personens sivilstand")
   val sivilstand: SivilstandKode,
 
-  @Schema(description = "Manuelt opprettet av")
-  val opprettetAv: String?,
-
   @Schema(description = "Hentet tidspunkt")
-  val hentetTidspunkt: LocalDateTime,
+  val hentetTidspunkt: LocalDateTime
 )
 
 data class BarnetilsynDto(
