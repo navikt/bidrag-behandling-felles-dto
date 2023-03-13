@@ -57,7 +57,7 @@ data class Engangsbelop(
   val innkreving: Innkreving,
   val endring: Boolean,
   val omgjorVedtakId: Int?,
-  val referanse: String?,
+  val referanse: String,
   val delytelseId: String?,
   val eksternReferanse: String?
 )
