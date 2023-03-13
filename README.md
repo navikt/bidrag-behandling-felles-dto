@@ -82,3 +82,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.72  | Endret       | Tilpasninger mot vedtal, omgjorVedtakId og referanse. Fjerner endrerEngangsbelopId                        |
 | 0.0.73  | Endret       | Endrer omgjorVedtakId fra String til Int                                                                  |
 | 0.0.74  | Endret       | Endrer referanse til non-nullable                                                                         |
+| 0.0.75  | Endret       | Tilpasninger format pdl-data i grunnlag                                                                   |
