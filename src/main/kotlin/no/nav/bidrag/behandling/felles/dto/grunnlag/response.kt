@@ -59,7 +59,7 @@ data class HentGrunnlagspakkeDto(
   @Schema(description = "Periodisert liste over innhentet kontantstøtte")
   val kontantstotteListe: List<KontantstotteDto>,
 
-  @Schema(description = "Liste over hvilke perioder BMs barn har bodd sammen med BM. Barn som ikke er med i listen har ikke bodd sammen med BM i perioden fra virkningstidspunkt og fremover")
+  @Schema(description = "Liste over hvilke perioder BM/BPs barn har bodd sammen med BM/BP. Barn som ikke er med i listen har ikke bodd sammen med BM/BP i perioden fra virkningstidspunkt og fremover")
   val egneBarnIHusstandenListe: List<HusstandsmedlemDto>,
 
   @Schema(description = "Periodisert liste over voksne som har bodd sammen med BP i perioden fra virkningstidspunkt og fremover")
@@ -291,18 +291,24 @@ data class HusstandsmedlemDto(
   @Schema(description = "Navn på husstandsmedlemmet, format <Fornavn, mellomnavn, Etternavn")
   var navn: String?,
 
+  @Schema(description = "Husstandsmedlemmets fødselsdato")
+  val foedselsdato: LocalDate?,
+
+  @Schema(description = "Angir om Husstandsmedlemmet er barn av BM/BP, som dette grunnlaget er hentet for")
+  val husstandsmedlemmetErBarnAvBmBp: Boolean,
+
   @Schema(description = "Hentet tidspunkt")
   val hentetTidspunkt: LocalDateTime,
 
-  @Schema(description = "Perioder personen bor i samme husstand som BM")
+  @Schema(description = "Perioder personen bor i samme husstand som BM/BP")
   val borISammeHusstandDtoListe: List<BorISammeHusstandDto>
 )
 
 data class BorISammeHusstandDto(
-  @Schema(description = "Personen bor i husstanden fra- og med måned")
+  @Schema(description = "Personen bor i samme husstand som BM/BP fra- og med måned")
   val periodeFra: LocalDate?,
 
-  @Schema(description = "Personen bor i husstanden til- og med måned")
+  @Schema(description = "Personen bor i samme husstand som BM/BP til- og med måned")
   val periodeTil: LocalDate?
 )
 
