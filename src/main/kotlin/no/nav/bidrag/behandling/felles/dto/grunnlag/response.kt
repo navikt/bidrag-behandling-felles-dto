@@ -283,7 +283,7 @@ data class KontantstotteDto(
 // PDL-data
 data class HusstandsmedlemDto(
   @Schema(description = "Personid til BM/BP")
-  val personId: String?,
+  val partPersonId: String?,
 
   @Schema(description = "Personid til husstandsmedlemmet. For forskudd vil dette være id for BMs barn. For bidrag er dette et voksent husstandsmedlem")
   var husstandsmedlemPersonId: String?,
@@ -295,7 +295,16 @@ data class HusstandsmedlemDto(
   val foedselsdato: LocalDate?,
 
   @Schema(description = "Angir om Husstandsmedlemmet er barn av BM/BP, som dette grunnlaget er hentet for")
-  val husstandsmedlemmetErBarnAvBmBp: Boolean,
+  val erBarnAvBmBp: Boolean,
+
+  @Schema(description = "Angir om en inntektsopplysning er aktiv")
+  val aktiv: Boolean,
+
+  @Schema(description = "Tidspunkt inntekten tas i bruk")
+  val brukFra: LocalDateTime,
+
+  @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
+  val brukTil: LocalDateTime?,
 
   @Schema(description = "Hentet tidspunkt")
   val hentetTidspunkt: LocalDateTime,
