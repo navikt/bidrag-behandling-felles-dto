@@ -85,3 +85,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.75  | Endret       | Tilpasninger format pdl-data i grunnlag                                                                   |
 | 0.0.76  | Endret       | Fjernet bl.a info om husstand da vi ikke trenger å lagre dette i bidrag-grunnlag                          |
 | 0.0.77  | Endret       | Restrukturering av respons med pdl-data fra bidrag-grunnlag                                               |
+| 0.0.78  | Endret       | Restrukturering av respons med pdl-data fra bidrag-grunnlag noch einmal                                   |
