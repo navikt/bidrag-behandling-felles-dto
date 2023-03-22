@@ -3,7 +3,7 @@
 
   <groupId>no.nav.bidrag</groupId>
   <artifactId>bidrag-behandling-felles-dto</artifactId>
-  <version>0.0.79-SNAPSHOT</version>
+  <version>0.0.79</version>
   <packaging>jar</packaging>
   <name>bidrag-behandling-felles-dto</name>
   <description>Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling av bidrag</description>
