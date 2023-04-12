@@ -252,10 +252,10 @@ data class BarnetilleggDto(
 
 data class KontantstotteDto(
 
-  @Schema(description = "Id til personen som mottar kontatstøtten")
+  @Schema(description = "Id til personen som mottar kontantstøtten")
   val partPersonId: String,
 
-  @Schema(description = "Id til barnet kontatstøtten er for")
+  @Schema(description = "Id til barnet kontantstøtten er for")
   val barnPersonId: String,
 
   @Schema(description = "Periode fra-dato")
@@ -373,4 +373,32 @@ data class BarnetilsynDto(
 
   @Schema(description = "Hentet tidspunkt")
   val hentetTidspunkt: LocalDateTime
+)
+
+
+data class OvergangsstønadDto(
+
+    @Schema(description = "Id til personen som mottar overgangsstønaden")
+    val partPersonId: String,
+
+    @Schema(description = "Periode fra-dato")
+    val periodeFra: LocalDate,
+
+    @Schema(description = "Periode til-dato")
+    val periodeTil: LocalDate?,
+
+    @Schema(description = "Angir om en inntektsopplysning er aktiv")
+    val aktiv: Boolean,
+
+    @Schema(description = "Tidspunkt inntekten tas i bruk")
+    val brukFra: LocalDateTime,
+
+    @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
+    val brukTil: LocalDateTime?,
+
+    @Schema(description = "Beløp overgangsstønad")
+    val belop: Int,
+
+    @Schema(description = "Hentet tidspunkt")
+    val hentetTidspunkt: LocalDateTime
 )
