@@ -69,7 +69,10 @@ data class HentGrunnlagspakkeDto(
   val sivilstandListe: List<SivilstandDto>,
 
   @Schema(description = "Periodisert liste over innhentet barnetilsyn")
-  val barnetilsynListe: List<BarnetilsynDto>
+  val barnetilsynListe: List<BarnetilsynDto>,
+
+  @Schema(description = "Periodisert liste over innhentet overgangsstønad")
+  val overgangsstønadListe: List<OvergangsstønadDto>
 
 )
 
