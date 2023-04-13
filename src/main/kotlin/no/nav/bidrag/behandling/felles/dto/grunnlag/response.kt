@@ -72,7 +72,7 @@ data class HentGrunnlagspakkeDto(
   val barnetilsynListe: List<BarnetilsynDto>,
 
   @Schema(description = "Periodisert liste over innhentet overgangsstønad")
-  val overgangsstønadListe: List<OvergangsstønadDto>
+  val overgangsstonadListe: List<OvergangsstonadDto>
 
 )
 
@@ -379,7 +379,7 @@ data class BarnetilsynDto(
 )
 
 
-data class OvergangsstønadDto(
+data class OvergangsstonadDto(
 
     @Schema(description = "Id til personen som mottar overgangsstønaden")
     val partPersonId: String,

@@ -89,3 +89,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.79  | Endret       | Husstandsmedlem renames til relatertPerson - bidrag-grunnlag                                              |
 | 0.0.80  | Endret       | Ny klasse bidrag.grunnlag OvergangsstønadDto                                                              |
 | 0.0.81  | Endret       | Legger med overgangsstønad i HentGrunnlagspakkeDto                                                        |
+| 0.0.82  | Endret       | Endrer fra overgangsstønad til overgangsstonad pga feil i tester                                          |
