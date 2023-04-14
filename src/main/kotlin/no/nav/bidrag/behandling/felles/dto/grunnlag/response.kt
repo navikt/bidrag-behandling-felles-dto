@@ -94,7 +94,7 @@ data class AinntektDto(
   @Schema(description = "Tidspunkt inntekten taes i bruk")
   val brukFra: LocalDateTime,
 
-  @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv. Null betyr at inntekten er aktiv")
+  @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv som grunnlag. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Hentet tidspunkt")
@@ -159,7 +159,7 @@ data class SkattegrunnlagDto(
   @Schema(description = "Tidspunkt inntekten taes i bruk")
   val brukFra: LocalDateTime,
 
-  @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv. Null betyr at inntekten er aktiv")
+  @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv som grunnlag. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Hentet tidspunkt")
@@ -200,10 +200,10 @@ data class UtvidetBarnetrygdOgSmaabarnstilleggDto(
   @Schema(description = "Angir om en stønad er aktiv")
   val aktiv: Boolean,
 
-  @Schema(description = "Tidspunkt stønaden taes i bruk")
+  @Schema(description = "Tidspunkt inntekten taes i bruk")
   val brukFra: LocalDateTime,
 
-  @Schema(description = "Tidspunkt stønaden ikke lenger er aktiv. Null betyr at stønaden er aktiv")
+  @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv som grunnlag. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Beløp")
@@ -240,7 +240,7 @@ data class BarnetilleggDto(
   @Schema(description = "Tidspunkt stønaden taes i bruk")
   val brukFra: LocalDateTime,
 
-  @Schema(description = "Tidspunkt stønaden ikke lenger er aktiv. Null betyr at stønaden er aktiv")
+  @Schema(description = "Tidspunkt stønaden ikke lenger er aktiv som grunnlag. Null betyr at stønaden er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Bruttobeløp")
@@ -273,7 +273,7 @@ data class KontantstotteDto(
   @Schema(description = "Tidspunkt inntekten tas i bruk")
   val brukFra: LocalDateTime,
 
-  @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
+  @Schema(description = "Tidspunkt inntekten ikke lenger er aktiv som grunnlag. Null betyr at inntekten er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Beløpet kontantstøtten er på")
@@ -300,13 +300,13 @@ data class RelatertPersonDto(
   @Schema(description = "Angir om den relaterte personen er barn av BM/BP")
   val erBarnAvBmBp: Boolean,
 
-  @Schema(description = "Angir om en inntektsopplysning er aktiv")
+  @Schema(description = "Angir om en grunnlagsopplysning er aktiv")
   val aktiv: Boolean,
 
-  @Schema(description = "Tidspunkt inntekten tas i bruk")
+  @Schema(description = "Tidspunkt grunnlaget tas i bruk")
   val brukFra: LocalDateTime,
 
-  @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
+  @Schema(description = "Tidspunkt grunnlaget ikke lenger er aktivt. Null betyr at grunnlaget er aktivt")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Hentet tidspunkt")
@@ -338,6 +338,15 @@ data class SivilstandDto(
   @Schema(description = "Personens sivilstand")
   val sivilstand: SivilstandKode,
 
+  @Schema(description = "Angir om en grunnlagsopplysning er aktiv")
+  val aktiv: Boolean,
+
+  @Schema(description = "Tidspunkt grunnlaget tas i bruk")
+  val brukFra: LocalDateTime,
+
+  @Schema(description = "Tidspunkt grunnlaget ikke lenger er aktivt. Null betyr at grunnlaget er aktivt")
+  val brukTil: LocalDateTime?,
+
   @Schema(description = "Hentet tidspunkt")
   val hentetTidspunkt: LocalDateTime
 )
@@ -356,13 +365,13 @@ data class BarnetilsynDto(
   @Schema(description = "Periode til-dato")
   val periodeTil: LocalDate?,
 
-  @Schema(description = "Angir om en inntektsopplysning er aktiv")
+  @Schema(description = "Angir om en stønadsopplysning er aktiv")
   val aktiv: Boolean,
 
-  @Schema(description = "Tidspunkt inntekten tas i bruk")
+  @Schema(description = "Tidspunkt stønadsopplysningen tas i bruk som grunnlag")
   val brukFra: LocalDateTime,
 
-  @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
+  @Schema(description = "Tidspunkt stønadsopplysning ikke lenger aktiv som grunnlag. Null betyr at stønadsopplysningen er aktiv")
   val brukTil: LocalDateTime?,
 
   @Schema(description = "Beløpet barnetilsynet er på")
@@ -396,7 +405,7 @@ data class OvergangsstonadDto(
     @Schema(description = "Tidspunkt inntekten tas i bruk")
     val brukFra: LocalDateTime,
 
-    @Schema(description = "Tidspunkt inntekten ikke lenger aktiv. Null betyr at inntekten er aktiv")
+    @Schema(description = "Tidspunkt inntekten ikke lenger aktiv som grunnlag. Null betyr at inntekten er aktiv")
     val brukTil: LocalDateTime?,
 
     @Schema(description = "Beløp overgangsstønad")
