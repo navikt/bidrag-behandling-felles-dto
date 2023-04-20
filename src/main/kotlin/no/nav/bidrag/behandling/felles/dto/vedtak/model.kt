@@ -17,6 +17,7 @@ data class VedtakHendelse(
   val enhetId: String,
   val utsattTilDato: LocalDate?,
   val opprettetAv: String,
+  val opprettetAvNavn: String?,
   val opprettetTidspunkt: LocalDateTime,
   val stonadsendringListe: List<Stonadsendring>?,
   val engangsbelopListe: List<Engangsbelop>?,

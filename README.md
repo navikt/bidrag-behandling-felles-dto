@@ -93,3 +93,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.83  | Endret       | Forbedrer beskrivelser av grunnlag, lagt til felter på SivilstandDto                                      |
 | 0.0.84  | Endret       | Endrer referanse på engangsbelop til å være not nullable                                                  |
 | 0.0.85  | Endret       | Nytt felt på vedtak: opprettet_av_navn                                                                    |
+| 0.0.86  | Endret       | OpprettetAvNavn også med på VedtakHendelse                                                                |
