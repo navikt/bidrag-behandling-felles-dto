@@ -31,6 +31,9 @@ data class OpprettVedtakRequestDto(
   @Size(min = 5)
   val opprettetAv: String,
 
+  @Schema(description = "Saksbehandlers navn")
+  val opprettetAvNavn: String?,
+
   @Schema(description = "Tidspunkt/timestamp når vedtaket er fattet")
   val vedtakTidspunkt: LocalDateTime,
 
