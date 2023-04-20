@@ -91,3 +91,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.81  | Endret       | Legger med overgangsstønad i HentGrunnlagspakkeDto                                                        |
 | 0.0.82  | Endret       | Endrer fra overgangsstønad til overgangsstonad pga feil i tester                                          |
 | 0.0.83  | Endret       | Forbedrer beskrivelser av grunnlag, lagt til felter på SivilstandDto                                      |
+| 0.0.84  | Endret       | Endrer referanse på engangsbelop til å være not nullable                                                  |
