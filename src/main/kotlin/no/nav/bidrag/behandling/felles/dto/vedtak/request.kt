@@ -158,7 +158,7 @@ data class OpprettEngangsbelopRequestDto(
   val omgjorVedtakId: Int?,
 
   @Schema(description = "Referanse, brukes for å kunne omgjøre engangsbeløp senere i et klagevedtak. Unik innenfor et vedtak")
-  val referanse: String?,
+  val referanse: String,
 
   @Schema(description = "Referanse - delytelsesId/beslutningslinjeId -> bidrag-regnskap. Skal fjernes senere")
   val delytelseId: String?,
