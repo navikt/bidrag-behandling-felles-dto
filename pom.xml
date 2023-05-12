@@ -108,51 +108,59 @@
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.1.0</version>
         <executions>
           <execution>
-            <id>compile</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>testCompile</id>
-            <phase>test-compile</phase>
-            <goals>
-              <goal>testCompile</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>${build-helper-maven.version}</version>
-        <executions>
-          <execution>
-            <id>remove-old-artifacts</id>
-            <phase>package</phase>
-            <goals>
-              <goal>remove-project-artifact</goal>
-            </goals>
+            <id>ktlint</id>
+            <phase>verify</phase>
             <configuration>
-              <removeAll>true</removeAll>
+              <target name="ktlint">
+                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true"
+                  classpathref="maven.plugin.classpath" classname="com.pinterest.ktlint.Main">
+                  <arg value="src/**/*.kt"/>
+                </java>
+              </target>
             </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>ktlint-format</id>
+            <phase>validate</phase>
+            <configuration>
+              <target name="ktlint">
+                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true"
+                  classpathref="maven.plugin.classpath" classname="com.pinterest.ktlint.Main">
+                  <jvmarg value="--add-opens"/>
+                  <jvmarg value="java.base/java.lang=ALL-UNNAMED"/>
+                  <arg value="-F"/>
+                  <arg value="src/**/*.kt"/>
+                </java>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>com.pinterest</groupId>
+            <artifactId>ktlint</artifactId>
+            <version>0.47.1</version>
+          </dependency>
+          <!-- additional 3rd party ruleset(s) can be specified here -->
+        </dependencies>
       </plugin>
-
     </plugins>
   </build>
 
   <repositories>
     <repository>
-      <id>github-package-registry-navikt</id>
-      <url>https://maven.pkg.github.com/navikt/maven-release</url>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/navikt/bidrag-commons</url>
     </repository>
   </repositories>
 </project>
