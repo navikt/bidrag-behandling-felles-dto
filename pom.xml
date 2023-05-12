@@ -3,7 +3,7 @@
 
   <groupId>no.nav.bidrag</groupId>
   <artifactId>bidrag-behandling-felles-dto</artifactId>
-  <version>0.0.88-SNAPSHOT</version>
+  <version>0.0.88</version>
   <packaging>jar</packaging>
   <name>bidrag-behandling-felles-dto</name>
   <description>Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling av bidrag</description>
@@ -111,9 +111,8 @@
             <phase>verify</phase>
             <configuration>
               <target name="ktlint">
-                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true"
-                  classpathref="maven.plugin.classpath" classname="com.pinterest.ktlint.Main">
-                  <arg value="src/**/*.kt"/>
+                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true" classpathref="maven.plugin.classpath" classname="com.pinterest.ktlint.Main">
+                  <arg value="src/**/*.kt" />
                 </java>
               </target>
             </configuration>
@@ -126,12 +125,11 @@
             <phase>validate</phase>
             <configuration>
               <target name="ktlint">
-                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true"
-                  classpathref="maven.plugin.classpath" classname="com.pinterest.ktlint.Main">
-                  <jvmarg value="--add-opens"/>
-                  <jvmarg value="java.base/java.lang=ALL-UNNAMED"/>
-                  <arg value="-F"/>
-                  <arg value="src/**/*.kt"/>
+                <java taskname="ktlint" dir="${basedir}" fork="true" failonerror="true" classpathref="maven.plugin.classpath" classname="com.pinterest.ktlint.Main">
+                  <jvmarg value="--add-opens" />
+                  <jvmarg value="java.base/java.lang=ALL-UNNAMED" />
+                  <arg value="-F" />
+                  <arg value="src/**/*.kt" />
                 </java>
               </target>
             </configuration>
