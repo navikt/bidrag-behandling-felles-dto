@@ -98,3 +98,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.88  | Endret       | Tilpasset til Spring boot 3                                                                               |
 | 0.0.89  | Endret       | Legger tilbake to lister i HentGrunnlagspakkeDto og setter de som @Deprecated og initialisert             |
 | 0.0.90  | Endret       | Legger til behandlingsreferanse på VedtakHendelse                                                         |
+| 0.0.91  | Endret       | ArbeidsforholdDto Grunnlag                                                                                |
