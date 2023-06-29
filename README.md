@@ -101,3 +101,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.91  | Endret       | ArbeidsforholdDto Grunnlag                                                                                |
 | 0.0.92  | Endret       | OpprettVedtakRequestDto endret, periodeliste kan nå være tom ref endre mottakerId                         |
 | 0.0.93  | Endret       | Opprettet dto'er for å hente grunnlag direkte, uten lagring i bidrag-grunnlag. Arbeidsforhold.            |
+| 0.0.94  | Endret       | Diverse justeringer på Arbeidsforhold-dto'er                                                              |

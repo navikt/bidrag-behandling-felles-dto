@@ -417,7 +417,7 @@ data class ArbeidsforholdDto(
     val partPersonId: String,
 
     @Schema(description = "Startdato for arbeidsforholdet")
-    val startdato: LocalDate,
+    val startdato: LocalDate?,
 
     @Schema(description = "Eventuell sluttdato for arbeidsforholdet")
     val sluttdato: LocalDate?,
@@ -432,10 +432,10 @@ data class ArbeidsforholdDto(
     val ansettelsesdetaljer: List<Ansettelsesdetaljer>?,
 
     @Schema(description = "Liste over registrerte permisjoner")
-    val permisjoner: List<Permisjon>,
+    val permisjoner: List<Permisjon>?,
 
     @Schema(description = "Liste over registrerte permitteringer")
-    val permitteringer: List<Permittering>,
+    val permitteringer: List<Permittering>?,
 
     @Schema(description = "Hentet tidspunkt")
     val hentetTidspunkt: LocalDateTime
@@ -444,13 +444,13 @@ data class ArbeidsforholdDto(
 data class Ansettelsesdetaljer(
 
     @Schema(description = "Fradato for ansettelsesdetalj")
-    val periodeFra: LocalDate,
+    val periodeFra: LocalDate?,
 
     @Schema(description = "Eventuell sluttdato for ansettelsesdetalj")
     val periodeTil: LocalDate?,
 
     @Schema(description = "Type arbeidsforhold, Ordinaer, Maritim, Forenklet, Frilanser'")
-    val arbeidsforholdTypeType: String?,
+    val arbeidsforholdType: String?,
 
     @Schema(description = "Beskrivelse av arbeidstidsordning. Eks: 'Ikke skift'")
     val arbeidstidsordningBeskrivelse: String?,
@@ -476,15 +476,15 @@ data class Ansettelsesdetaljer(
 )
 
 data class Permisjon(
-    val startdato: LocalDate,
+    val startdato: LocalDate?,
     val sluttdato: LocalDate?,
-    val beskrivelse: String,
-    val prosent: Double,
+    val beskrivelse: String?,
+    val prosent: Double?,
 )
 
 data class Permittering(
-    val startdato: LocalDate,
+    val startdato: LocalDate?,
     val sluttdato: LocalDate?,
-    val beskrivelse: String,
-    val prosent: Double,
+    val beskrivelse: String?,
+    val prosent: Double?,
 )
