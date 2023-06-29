@@ -74,9 +74,6 @@ data class HentGrunnlagspakkeDto(
     @Schema(description = "Periodisert liste over innhentet overgangsstønad")
     val overgangsstonadListe: List<OvergangsstonadDto>,
 
-    @Schema(description = "Periodisert liste over innhentede arbeidsforhold")
-    val arbeidsforholdListe: List<ArbeidsforholdDto>,
-
 )
 
 data class AinntektDto(
@@ -410,6 +407,9 @@ data class OvergangsstonadDto(
     val hentetTidspunkt: LocalDateTime
 )
 
+data class HentGrunnlagDto(
+    val arbeidsforholdListe: List<ArbeidsforholdDto>
+)
 
 data class ArbeidsforholdDto(
 
@@ -417,10 +417,10 @@ data class ArbeidsforholdDto(
     val partPersonId: String,
 
     @Schema(description = "Startdato for arbeidsforholdet")
-    val periodeFra: LocalDate,
+    val startdato: LocalDate,
 
     @Schema(description = "Eventuell sluttdato for arbeidsforholdet")
-    val periodeTil: LocalDate?,
+    val sluttdato: LocalDate?,
 
     @Schema(description = "Navn på arbeidsgiver")
     val arbeidsgiverNavn: String?,
@@ -428,54 +428,63 @@ data class ArbeidsforholdDto(
     @Schema(description = "Arbeidsgivers organisasjonsnummer")
     val arbeidsgiverOrgnummer: String?,
 
-    @Schema(description = "Type arbeidsforhold, Ordinaer, Maritim, Forenklet, Frilanser")
-    val arbeidsforholdType: String?,
+    @Schema(description = "Liste av ansettelsesdetaljer, med eventuell historikk")
+    val ansettelsesdetaljer: List<Ansettelsesdetaljer>?,
 
-    @Schema(description = "Form for arbeidsforhold, fast, midlertidig")
-    val ansettelsesformKode: String?,
+    @Schema(description = "Liste over registrerte permisjoner")
+    val permisjoner: List<Permisjon>,
 
-    @Schema(description = "Beskrivelse av yrke")
-    val yrkeBeskrivelse: String?,
-
-    @Schema(description = "Avtalt antall timer i uken")
-    val antallTimerPrUke: Float?,
-
-    @Schema(description = "Stillingsprosent")
-    val stillingsprosent: Float?,
-
-    @Schema(description = "Dato for sist gang stillingsprosenten ble endret")
-    val stillingsprosentSistEndret: LocalDate?,
-
-    @Schema(description = "Dato for sist gang lønnen ble endret")
-    val lønnSistEndret: LocalDate?,
-
-    @Schema(description = "Dato for start for eventuell permisjon")
-    val permisjonStartdato: LocalDate?,
-
-    @Schema(description = "Dato for slutt for eventuell permisjon")
-    val permisjonSluttdato: LocalDate?,
-
-    @Schema(description = "Prosent for eventuell permisjon")
-    val permisjonProsent: Float?,
-
-    @Schema(description = "Dato for start for eventuell permittering")
-    val permitteringStartdato: LocalDate?,
-
-    @Schema(description = "Dato for slutt for eventuell permittering")
-    val permitteringSluttdato: LocalDate?,
-
-    @Schema(description = "Prosent for eventuell permittering")
-    val permitteringProsent: Float?,
-
-    @Schema(description = "Angir om en arbeidsforholdsopplysning er aktiv")
-    val aktiv: Boolean,
-
-    @Schema(description = "Tidspunkt grunnlaget tas i bruk")
-    val brukFra: LocalDateTime,
-
-    @Schema(description = "Tidspunkt grunnlaget ikke lenger aktivt som grunnlag. Null betyr at grunnlaget er aktiv")
-    val brukTil: LocalDateTime?,
+    @Schema(description = "Liste over registrerte permitteringer")
+    val permitteringer: List<Permittering>,
 
     @Schema(description = "Hentet tidspunkt")
     val hentetTidspunkt: LocalDateTime
+)
+
+data class Ansettelsesdetaljer(
+
+    @Schema(description = "Fradato for ansettelsesdetalj")
+    val periodeFra: LocalDate,
+
+    @Schema(description = "Eventuell sluttdato for ansettelsesdetalj")
+    val periodeTil: LocalDate?,
+
+    @Schema(description = "Type arbeidsforhold, Ordinaer, Maritim, Forenklet, Frilanser'")
+    val arbeidsforholdTypeType: String?,
+
+    @Schema(description = "Beskrivelse av arbeidstidsordning. Eks: 'Ikke skift'")
+    val arbeidstidsordningBeskrivelse: String?,
+
+    @Schema(description = "Beskrivelse av ansettelsesform. Eks: 'Fast ansettelse'")
+    val ansettelsesformBeskrivelse: String?,
+
+    @Schema(description = "Beskrivelse av yrke. Eks: 'KONTORLEDER'")
+    val yrkeBeskrivelse: String?,
+
+    @Schema(description = "Avtalt antall timer i uken")
+    val antallTimerPrUke: Double?,
+
+    @Schema(description = "Avtalt stillingsprosent")
+    val avtaltStillingsprosent: Double?,
+
+    @Schema(description = "Dato for forrige endring i stillingsprosent")
+    val sisteStillingsprosentendringDato: LocalDate?,
+
+    @Schema(description = "Dato for forrige lønnsendring")
+    val sisteLønnsendringDato: LocalDate?,
+
+)
+
+data class Permisjon(
+    val startdato: LocalDate,
+    val sluttdato: LocalDate?,
+    val beskrivelse: String,
+    val prosent: Double,
+)
+
+data class Permittering(
+    val startdato: LocalDate,
+    val sluttdato: LocalDate?,
+    val beskrivelse: String,
+    val prosent: Double,
 )
