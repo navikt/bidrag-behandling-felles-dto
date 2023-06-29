@@ -31,8 +31,15 @@ data class OppdaterGrunnlagspakkeRequestDto(
     val grunnlagRequestDtoListe: List<GrunnlagRequestDto>
 )
 
-data class GrunnlagRequestDto(
+// Request for å hente grunmnlag direkte fra bidrag-grunnlag uten å gå via grunnlagspakke og lagring i bidrag-grunnlag
+data class HentGrunnlagRequestDto(
+    @Schema(description = "Liste over hvilke typer grunnlag som skal hentes inn. På nivået under er personId og perioder angitt")
+    @field:Valid
+    @field:NotEmpty(message = "Listen kan ikke være null eller tom.")
+    val grunnlagRequestDtoListe: List<GrunnlagRequestDto>
+)
 
+data class GrunnlagRequestDto(
     @Schema(description = "Hvilken type grunnlag skal hentes")
     val type: GrunnlagRequestType,
 
