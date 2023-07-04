@@ -9,6 +9,7 @@ import no.nav.bidrag.behandling.felles.enums.barnetilsyn.Tilsyntype
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.YearMonth
 
 @Schema(description = "Respons ved oppdatering av  grunnlagspakke")
 data class OppdaterGrunnlagspakkeDto(
@@ -443,11 +444,11 @@ data class ArbeidsforholdDto(
 
 data class Ansettelsesdetaljer(
 
-    @Schema(description = "Fradato for ansettelsesdetalj")
-    val periodeFra: LocalDate?,
+    @Schema(description = "Fradato for ansettelsesdetalj. År + måned")
+    val periodeFra: YearMonth?,
 
-    @Schema(description = "Eventuell sluttdato for ansettelsesdetalj")
-    val periodeTil: LocalDate?,
+    @Schema(description = "Eventuell sluttdato for ansettelsesdetalj. År + måned")
+    val periodeTil: YearMonth?,
 
     @Schema(description = "Type arbeidsforhold, Ordinaer, Maritim, Forenklet, Frilanser'")
     val arbeidsforholdType: String?,
