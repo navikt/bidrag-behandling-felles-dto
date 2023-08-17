@@ -2,13 +2,13 @@ package no.nav.bidrag.behandling.felles.dto.vedtak
 
 import com.fasterxml.jackson.databind.JsonNode
 import io.swagger.v3.oas.annotations.media.Schema
-import no.nav.bidrag.behandling.felles.enums.BehandlingsrefKilde
-import no.nav.bidrag.behandling.felles.enums.EngangsbelopType
-import no.nav.bidrag.behandling.felles.enums.GrunnlagType
-import no.nav.bidrag.behandling.felles.enums.Innkreving
-import no.nav.bidrag.behandling.felles.enums.StonadType
-import no.nav.bidrag.behandling.felles.enums.VedtakKilde
-import no.nav.bidrag.behandling.felles.enums.VedtakType
+import no.nav.bidrag.domain.enums.BehandlingsrefKilde
+import no.nav.bidrag.domain.enums.EngangsbelopType
+import no.nav.bidrag.domain.enums.GrunnlagType
+import no.nav.bidrag.domain.enums.Innkreving
+import no.nav.bidrag.domain.enums.StonadType
+import no.nav.bidrag.domain.enums.VedtakKilde
+import no.nav.bidrag.domain.enums.VedtakType
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime

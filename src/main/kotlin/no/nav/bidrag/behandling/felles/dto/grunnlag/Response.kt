@@ -1,11 +1,11 @@
 package no.nav.bidrag.behandling.felles.dto.grunnlag
 
 import io.swagger.v3.oas.annotations.media.Schema
-import no.nav.bidrag.behandling.felles.enums.GrunnlagRequestType
-import no.nav.bidrag.behandling.felles.enums.GrunnlagsRequestStatus
-import no.nav.bidrag.behandling.felles.enums.SivilstandKode
-import no.nav.bidrag.behandling.felles.enums.barnetilsyn.Skolealder
-import no.nav.bidrag.behandling.felles.enums.barnetilsyn.Tilsyntype
+import no.nav.bidrag.domain.enums.GrunnlagRequestType
+import no.nav.bidrag.domain.enums.GrunnlagsRequestStatus
+import no.nav.bidrag.domain.enums.SivilstandKode
+import no.nav.bidrag.domain.enums.barnetilsyn.Skolealder
+import no.nav.bidrag.domain.enums.barnetilsyn.Tilsyntype
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -73,7 +73,7 @@ data class HentGrunnlagspakkeDto(
     val barnetilsynListe: List<BarnetilsynDto>,
 
     @Schema(description = "Periodisert liste over innhentet overgangsstønad")
-    val overgangsstonadListe: List<OvergangsstonadDto>,
+    val overgangsstonadListe: List<OvergangsstonadDto>
 
 )
 
@@ -472,7 +472,7 @@ data class Ansettelsesdetaljer(
     val sisteStillingsprosentendringDato: LocalDate?,
 
     @Schema(description = "Dato for forrige lønnsendring")
-    val sisteLønnsendringDato: LocalDate?,
+    val sisteLønnsendringDato: LocalDate?
 
 )
 
@@ -480,12 +480,12 @@ data class Permisjon(
     val startdato: LocalDate?,
     val sluttdato: LocalDate?,
     val beskrivelse: String?,
-    val prosent: Double?,
+    val prosent: Double?
 )
 
 data class Permittering(
     val startdato: LocalDate?,
     val sluttdato: LocalDate?,
     val beskrivelse: String?,
-    val prosent: Double?,
+    val prosent: Double?
 )

@@ -1,8 +1,8 @@
 package no.nav.bidrag.behandling.felles.dto.stonad
 
 import io.swagger.v3.oas.annotations.media.Schema
-import no.nav.bidrag.behandling.felles.enums.Innkreving
-import no.nav.bidrag.behandling.felles.enums.StonadType
+import no.nav.bidrag.domain.enums.Innkreving
+import no.nav.bidrag.domain.enums.StonadType
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalDateTime

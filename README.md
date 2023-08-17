@@ -103,3 +103,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.93  | Endret       | Opprettet dto'er for å hente grunnlag direkte, uten lagring i bidrag-grunnlag. Arbeidsforhold.            |
 | 0.0.94  | Endret       | Diverse justeringer på Arbeidsforhold-dto'er                                                              |
 | 0.0.95  | Endret       | Flere justeringer på Arbeidsforhold-dto'er                                                                |
+| 0.0.96  | Endret       | Oppdatert bidrag-behandling-felles og lagt til bidrag-domain avhengighet                                  |
