@@ -104,3 +104,4 @@ Inneholder DTOer (dataklasser) som brukes av flere repositories ifbm behandling 
 | 0.0.94  | Endret       | Diverse justeringer på Arbeidsforhold-dto'er                                                              |
 | 0.0.95  | Endret       | Flere justeringer på Arbeidsforhold-dto'er                                                                |
 | 0.0.96  | Endret       | Oppdatert bidrag-behandling-felles og lagt til bidrag-domain avhengighet                                  |
+| 0.0.97  | Endret       | Oppdatert bidrag-behandling-felles og fjernet spring-boot 3 avhengighet                                   |

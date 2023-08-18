@@ -27,9 +27,10 @@
     <!-- language -->
     <java.version>17</java.version>
     <kotlin.version>1.8.21</kotlin.version>
-    <springdoc-openapi-ui.version>2.1.0</springdoc-openapi-ui.version>
-    <bidrag-behandling-felles.version>0.0.86</bidrag-behandling-felles.version>
+    <swagger.version>2.2.8</swagger.version>
+    <bidrag-behandling-felles.version>0.0.87</bidrag-behandling-felles.version>
     <bidrag-domain.version>20230817134109_ada9d45</bidrag-domain.version>
+    <jakarta.version>3.0.2</jakarta.version>
 
     <!-- build -->
     <build-helper-maven.version>3.2.0</build-helper-maven.version>
@@ -57,17 +58,20 @@
 
     <!-- swagger -->
     <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-      <version>${springdoc-openapi-ui.version}</version>
+      <groupId>io.swagger.core.v3</groupId>
+      <artifactId>swagger-annotations</artifactId>
+      <version>${swagger.version}</version>
     </dependency>
-
     <dependency>
       <groupId>no.nav.bidrag</groupId>
       <artifactId>bidrag-domain</artifactId>
       <version>${bidrag-domain.version}</version>
     </dependency>
-
+    <dependency>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+      <version>${jakarta.version}</version>
+    </dependency>
     <!-- nav -->
     <dependency>
       <groupId>no.nav.bidrag</groupId>
